@@ -34,6 +34,7 @@ php -S localhost:8080 -t .
 4. FTP（ロリポップFTPアカウント）でこの `backend-php/` フォルダの中身一式（`.env` を含む）を、公開フォルダ配下の `api/` に丸ごとアップロード。
    - 最終的な公開URLが `https://your-domain.example.com/api/...` になるように配置する。
 5. データ投入と管理者作成：
+   - `seed.php` は冪等（`source='seed'` の話題だけ削除して入れ直す）なので、既に一度実行済みの本番DBに対して再実行しても二重化しない。ユーザー投稿・AI生成の話題には触れない。
    - **SSHがある場合**：`php seed.php` と `php cli/create_admin.php <username> <password>` をそのまま実行。
    - **SSHが無い場合（基本プラン）**：
      - シード投入は `schema.sql` と同様に phpMyAdmin から `seed.php` の中身相当を手動INSERTするか、`seed.php` を一時的にブラウザから直接開いて実行し、終わったら削除する。

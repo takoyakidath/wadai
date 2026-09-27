@@ -1,6 +1,10 @@
 <?php
 declare(strict_types=1);
 
+// 何度実行しても安全（冪等）。source='seed' の話題だけを削除してから入れ直すので、
+// 本番で既に一度このスクリプトを実行済みでも、ユーザー投稿・AI生成の話題を壊さずに
+// 安心して再実行できる（詳細は下の DELETE FROM topics ... の箇所を参照）。
+
 require_once __DIR__ . '/config.php';
 
 $pdo = wadai_db();
@@ -494,6 +498,12 @@ try {
         $idStmt->execute([':key' => $c['key']]);
         $categoryIdByKey[$c['key']] = (int) $idStmt->fetchColumn();
     }
+
+    // このスクリプトは何度実行しても安全（冪等）にする：source='seed' の話題だけを一旦削除して
+    // 入れ直す。ユーザー投稿（user_submission）・AI生成（ai_generated）の話題には一切触れない。
+    // topic_relations は topics への ON DELETE CASCADE があるので、古いseed話題の削除で
+    // 古い関連エッジも自動的に消える（新しいエッジは下の $relations ループで入り直す）。
+    $pdo->exec("DELETE FROM topics WHERE source = 'seed'");
 
     $topicIdByKey = [];
     $topicStmt = $pdo->prepare(
