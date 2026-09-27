@@ -24,3 +24,25 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ガチャ/深める/広げるでカードが切り替わるたびの短い演出（企画書§5: 0.3〜0.4秒のCSSトランジション） */
+@keyframes wadai-card-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.wadai-card-in {
+  animation: wadai-card-in 0.32s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wadai-card-in {
+    animation: none;
+  }
+}

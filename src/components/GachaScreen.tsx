@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { TopicDTO } from "@/lib/topics";
 import {
@@ -12,6 +12,7 @@ import {
   type CategoryDTO,
 } from "@/lib/api-client";
 import { aiDeepenTopic, logoutUser } from "@/lib/user-api-client";
+import { categoryIcon, categoryTheme } from "@/lib/categories";
 import { useIsLoggedIn } from "@/hooks/useUserSession";
 import { TopicCard } from "@/components/TopicCard";
 import { ActionButtons } from "@/components/ActionButtons";
@@ -31,6 +32,8 @@ export function GachaScreen() {
   const [offline, setOffline] = useState(false);
   const party = usePartyMode();
   const isLoggedIn = useIsLoggedIn();
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const [tabScroll, setTabScroll] = useState({ left: false, right: false });
 
   useEffect(() => {
     fetchCategories()
@@ -38,6 +41,24 @@ export function GachaScreen() {
       .catch(() => setCategories([]));
     return subscribeOfflineMode(setOffline);
   }, []);
+
+  function updateTabScroll() {
+    const el = tabsRef.current;
+    if (!el) return;
+    setTabScroll({
+      left: el.scrollLeft > 4,
+      right: el.scrollLeft + el.clientWidth < el.scrollWidth - 4,
+    });
+  }
+
+  useEffect(() => {
+    updateTabScroll();
+  }, [categories]);
+
+  useEffect(() => {
+    const el = tabsRef.current?.querySelector<HTMLElement>(`[data-key="${categoryKey}"]`);
+    el?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  }, [categoryKey]);
 
   const current = history[history.length - 1] ?? null;
 
@@ -68,6 +89,9 @@ export function GachaScreen() {
   }
 
   const canAiDeepen = current !== null && !current.hasDeeper && current.depth < 4 && isLoggedIn;
+  // これ以上「深める」手段が無い状態（グラフ上の深め先が無く、AIでの深掘りも不可能な深度）。
+  // この時は深めるボタンを非活性にし、代わりに「広げる」を目立たせる（企画書§5の分岐方針）。
+  const maxedOut = current !== null && !current.hasDeeper && current.depth >= 4;
 
   function deepen() {
     if (!current) return;
@@ -119,6 +143,8 @@ export function GachaScreen() {
     canLighten: history.length > 1,
     disabled: loading,
     deepenLabel: canAiDeepen ? "🤖 AIで深める" : "🔍 深める",
+    deepenDisabled: maxedOut,
+    widenHighlight: maxedOut,
   };
 
   if (party.active && current) {
@@ -149,7 +175,10 @@ export function GachaScreen() {
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col gap-4 p-4">
       <header className="flex items-center justify-between">
-        <h1 className="text-lg font-bold">🎲 ワダイ</h1>
+        <div>
+          <h1 className="text-lg font-bold">🎲 ワダイ</h1>
+          <p className="text-xs text-neutral-400 dark:text-neutral-500">話題に困ったら、1回まわす。</p>
+        </div>
         <div className="flex items-center gap-3 text-sm text-neutral-500 dark:text-neutral-400">
           <Link href="/submit" className="underline-offset-2 hover:underline">
             ＋ 話題を送る
@@ -186,21 +215,38 @@ export function GachaScreen() {
         </div>
       )}
 
-      <div className="flex gap-2 overflow-x-auto pb-1">
-        {categories.map((c) => (
-          <button
-            key={c.key}
-            type="button"
-            onClick={() => selectCategory(c.key)}
-            className={`shrink-0 rounded-full px-3 py-1.5 text-sm font-medium ${
-              categoryKey === c.key
-                ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
-                : "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
-            }`}
-          >
-            {c.label}
-          </button>
-        ))}
+      <div className="relative">
+        <div
+          ref={tabsRef}
+          onScroll={updateTabScroll}
+          className="flex gap-2 overflow-x-auto scroll-smooth pb-1"
+        >
+          {categories.map((c) => {
+            const active = categoryKey === c.key;
+            const theme = categoryTheme(c.key);
+            return (
+              <button
+                key={c.key}
+                data-key={c.key}
+                type="button"
+                onClick={() => selectCategory(c.key)}
+                className={`shrink-0 rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
+                  active
+                    ? theme.activeTab
+                    : "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
+                }`}
+              >
+                {categoryIcon(c.key)} {c.label}
+              </button>
+            );
+          })}
+        </div>
+        {tabScroll.left && (
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-[var(--background)] to-transparent" />
+        )}
+        {tabScroll.right && (
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-[var(--background)] to-transparent" />
+        )}
       </div>
 
       {error && (
@@ -209,17 +255,26 @@ export function GachaScreen() {
         </p>
       )}
 
-      <div className="flex flex-1 flex-col justify-center gap-3">
+      <div
+        className={`flex flex-1 flex-col justify-center gap-3 transition-opacity ${
+          loading ? "opacity-50" : ""
+        }`}
+      >
         {history.length > 1 && (
           <div className="mx-auto -mb-6 w-11/12">
-            <TopicCard topic={history[history.length - 2]} faded />
+            <TopicCard key={history[history.length - 2].id} topic={history[history.length - 2]} faded />
           </div>
         )}
         {current ? (
-          <TopicCard topic={current} />
+          <TopicCard key={current.id} topic={current} />
         ) : (
           <p className="text-center text-sm text-neutral-500 dark:text-neutral-400">
-            話題に困ったら、1回まわす。
+            モードを選んで、🎲でスタート。
+          </p>
+        )}
+        {current && (
+          <p className="text-center text-[11px] text-neutral-400 dark:text-neutral-600">
+            🔁 交代しながら答えてみよう
           </p>
         )}
       </div>

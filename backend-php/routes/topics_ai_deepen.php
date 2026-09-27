@@ -14,7 +14,7 @@ if (!ctype_digit($topicId)) {
 }
 
 $stmt = $pdo->prepare(
-    'SELECT t.id, t.body, t.depth, t.category_id, c.label AS category_label
+    'SELECT t.id, t.body, t.depth, t.category_id, c.label AS category_label, c.`key` AS category_key
      FROM topics t LEFT JOIN categories c ON c.id = t.category_id
      WHERE t.id = :id AND t.status = "published"'
 );
@@ -34,7 +34,7 @@ if (wadai_ai_daily_count($pdo, $userId) >= WADAI_AI_DAILY_LIMIT_PER_USER) {
     wadai_error('ai_limit_reached', '本日のAI生成回数の上限に達しました。また明日お試しください。', 429);
 }
 
-$generatedBody = wadai_ai_generate_deeper_topic($parent['body'], $nextDepth, $parent['category_label']);
+$generatedBody = wadai_ai_generate_deeper_topic($parent['body'], $nextDepth, $parent['category_label'], $parent['category_key']);
 if ($generatedBody === null) {
     wadai_error('ai_generation_failed', '今は生成できませんでした。もう一度お試しください。', 503);
 }

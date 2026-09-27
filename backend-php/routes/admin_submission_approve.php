@@ -95,7 +95,7 @@ if ($aiExtend) {
     $parentBody = $body;
     $parentId = $topicId;
     for ($nextDepth = $depth + 1; $nextDepth <= 4; $nextDepth++) {
-        $generated = wadai_ai_generate_deeper_topic($parentBody, $nextDepth, $categoryLabel);
+        $generated = wadai_ai_generate_deeper_topic($parentBody, $nextDepth, $categoryLabel, $categoryKey);
         if ($generated === null) {
             break;
         }

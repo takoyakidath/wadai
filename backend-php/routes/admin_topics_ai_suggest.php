@@ -18,7 +18,7 @@ if ($categoryKey !== null && $categoryKey !== '') {
     $categoryLabel = $category !== false ? $category['label'] : null;
 }
 
-$chain = wadai_ai_generate_chain($categoryLabel);
+$chain = wadai_ai_generate_chain($categoryLabel, $categoryKey);
 if ($chain === null) {
     wadai_error('ai_generation_failed', '生成に失敗しました。もう一度お試しください。', 503);
 }

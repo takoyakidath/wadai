@@ -8,6 +8,7 @@ export function ActionButtons({
   compact = false,
   deepenLabel = "🔍 深める",
   deepenDisabled = false,
+  widenHighlight = false,
 }: {
   onLighten: () => void;
   onDeepen: () => void;
@@ -18,10 +19,12 @@ export function ActionButtons({
   compact?: boolean;
   deepenLabel?: string;
   deepenDisabled?: boolean;
+  widenHighlight?: boolean;
 }) {
   const base =
     "flex flex-1 items-center justify-center gap-1 rounded-xl border border-black/10 bg-white font-medium text-neutral-800 shadow-sm active:scale-95 disabled:opacity-40 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-100";
   const size = compact ? "px-2 py-2 text-xs" : "px-3 py-3 text-sm";
+  const primary = "!bg-neutral-900 !text-white dark:!bg-white dark:!text-neutral-900";
 
   return (
     <>
@@ -37,7 +40,8 @@ export function ActionButtons({
         type="button"
         onClick={onDeepen}
         disabled={disabled || deepenDisabled}
-        className={`${base} ${size} !bg-neutral-900 !text-white dark:!bg-white dark:!text-neutral-900`}
+        title={deepenDisabled ? "これ以上は深められません。広げてみよう" : undefined}
+        className={`${base} ${size} ${widenHighlight ? "" : primary}`}
       >
         {deepenLabel}
       </button>
@@ -45,7 +49,7 @@ export function ActionButtons({
         type="button"
         onClick={onWiden}
         disabled={disabled}
-        className={`${base} ${size}`}
+        className={`${base} ${size} ${widenHighlight ? primary : ""}`}
       >
         🔀 広げる
       </button>
