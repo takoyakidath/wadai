@@ -171,3 +171,34 @@ export function addTopicRelation(
 export function removeTopicRelation(topicId: string, relationId: string): Promise<void> {
   return adminFetch(`/admin/topics/${topicId}/relations/${relationId}`, { method: "DELETE" });
 }
+
+export type InviteTokenDTO = {
+  id: string;
+  token: string;
+  expiresAt: string | null;
+  createdAt: string;
+  usedAt: string | null;
+  usedByUsername: string | null;
+};
+
+export function listInviteTokens(): Promise<InviteTokenDTO[]> {
+  return adminFetch<{ inviteTokens: InviteTokenDTO[] }>("/admin/invite-tokens").then((d) => d.inviteTokens);
+}
+
+export function createInviteToken(): Promise<{ token: string; expiresAt: string | null }> {
+  return adminFetch("/admin/invite-tokens", { method: "POST", body: JSON.stringify({}) });
+}
+
+export function aiSuggestChain(categoryKey?: string): Promise<string[]> {
+  return adminFetch<{ chain: string[] }>("/admin/topics/ai-suggest", {
+    method: "POST",
+    body: JSON.stringify({ categoryKey }),
+  }).then((d) => d.chain);
+}
+
+export function aiSuggestSave(categoryKey: string | undefined, texts: string[]): Promise<string[]> {
+  return adminFetch<{ topicIds: string[] }>("/admin/topics/ai-suggest-save", {
+    method: "POST",
+    body: JSON.stringify({ categoryKey, texts }),
+  }).then((d) => d.topicIds);
+}

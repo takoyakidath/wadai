@@ -47,6 +47,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <nav className="flex gap-4 text-sm font-medium">
           <Link href="/admin">申請キュー</Link>
           <Link href="/admin/topics">話題一覧</Link>
+          <Link href="/admin/ai">AI</Link>
         </nav>
         <button
           type="button"

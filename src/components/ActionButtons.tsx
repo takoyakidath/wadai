@@ -6,6 +6,8 @@ export function ActionButtons({
   canLighten,
   disabled,
   compact = false,
+  deepenLabel = "🔍 深める",
+  deepenDisabled = false,
 }: {
   onLighten: () => void;
   onDeepen: () => void;
@@ -14,6 +16,8 @@ export function ActionButtons({
   canLighten: boolean;
   disabled: boolean;
   compact?: boolean;
+  deepenLabel?: string;
+  deepenDisabled?: boolean;
 }) {
   const base =
     "flex flex-1 items-center justify-center gap-1 rounded-xl border border-black/10 bg-white font-medium text-neutral-800 shadow-sm active:scale-95 disabled:opacity-40 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-100";
@@ -32,10 +36,10 @@ export function ActionButtons({
       <button
         type="button"
         onClick={onDeepen}
-        disabled={disabled}
+        disabled={disabled || deepenDisabled}
         className={`${base} ${size} !bg-neutral-900 !text-white dark:!bg-white dark:!text-neutral-900`}
       >
-        🔍 深める
+        {deepenLabel}
       </button>
       <button
         type="button"

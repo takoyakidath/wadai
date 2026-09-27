@@ -41,7 +41,6 @@ function wadai_notify_discord_new_submission(
     curl_exec($ch);
     $ok = curl_errno($ch) === 0;
     $status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
 
     return $ok && $status >= 200 && $status < 300;
 }

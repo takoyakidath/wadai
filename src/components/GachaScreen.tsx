@@ -11,6 +11,8 @@ import {
   subscribeOfflineMode,
   type CategoryDTO,
 } from "@/lib/api-client";
+import { aiDeepenTopic, logoutUser } from "@/lib/user-api-client";
+import { useIsLoggedIn } from "@/hooks/useUserSession";
 import { TopicCard } from "@/components/TopicCard";
 import { ActionButtons } from "@/components/ActionButtons";
 import { RelatedSheet } from "@/components/RelatedSheet";
@@ -28,6 +30,7 @@ export function GachaScreen() {
   const [error, setError] = useState<string | null>(null);
   const [offline, setOffline] = useState(false);
   const party = usePartyMode();
+  const isLoggedIn = useIsLoggedIn();
 
   useEffect(() => {
     fetchCategories()
@@ -64,11 +67,25 @@ export function GachaScreen() {
     });
   }
 
+  const canAiDeepen = current !== null && !current.hasDeeper && current.depth < 4 && isLoggedIn;
+
   function deepen() {
     if (!current) return;
     return withLoading(async () => {
-      const topic = await fetchDeeperTopic(current.id);
-      setHistory((prev) => [...prev, topic]);
+      if (current.hasDeeper) {
+        const topic = await fetchDeeperTopic(current.id);
+        setHistory((prev) => [...prev, topic]);
+        return;
+      }
+      if (canAiDeepen) {
+        const topic = await aiDeepenTopic(current.id);
+        setHistory((prev) => [...prev, topic]);
+        return;
+      }
+      if (current.depth < 4 && !isLoggedIn) {
+        throw new Error("ログインするとAIでさらに深められます。");
+      }
+      throw new Error("この話題にはこれ以上の深め方がありません。");
     });
   }
 
@@ -101,6 +118,7 @@ export function GachaScreen() {
     onReroll: () => void roll(),
     canLighten: history.length > 1,
     disabled: loading,
+    deepenLabel: canAiDeepen ? "🤖 AIで深める" : "🔍 深める",
   };
 
   if (party.active && current) {
@@ -132,12 +150,20 @@ export function GachaScreen() {
     <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col gap-4 p-4">
       <header className="flex items-center justify-between">
         <h1 className="text-lg font-bold">🎲 ワダイ</h1>
-        <Link
-          href="/submit"
-          className="text-sm text-neutral-500 underline-offset-2 hover:underline dark:text-neutral-400"
-        >
-          ＋ 話題を送る
-        </Link>
+        <div className="flex items-center gap-3 text-sm text-neutral-500 dark:text-neutral-400">
+          <Link href="/submit" className="underline-offset-2 hover:underline">
+            ＋ 話題を送る
+          </Link>
+          {isLoggedIn ? (
+            <button type="button" onClick={() => void logoutUser()} className="underline-offset-2 hover:underline">
+              ログアウト
+            </button>
+          ) : (
+            <Link href="/login" className="underline-offset-2 hover:underline">
+              🤖 ログイン
+            </Link>
+          )}
+        </div>
       </header>
 
       {offline && (

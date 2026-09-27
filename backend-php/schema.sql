@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS topics (
   depth         TINYINT UNSIGNED NOT NULL DEFAULT 1,
   is_starter    BOOLEAN NOT NULL DEFAULT FALSE,
   status        ENUM('draft','published','archived') NOT NULL DEFAULT 'draft',
-  source        ENUM('seed','user_submission') NOT NULL DEFAULT 'seed',
+  source        ENUM('seed','user_submission','ai_generated') NOT NULL DEFAULT 'seed',
   submission_id BIGINT UNSIGNED NULL,
   draw_count    INT UNSIGNED NOT NULL DEFAULT 0,
   created_at    DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -95,4 +95,53 @@ CREATE TABLE IF NOT EXISTS rate_limit_hits (
   ip_hash     CHAR(64) NOT NULL,
   created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   INDEX idx_rate_limit_lookup (bucket, ip_hash, created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ここから: AIでの話題生成（招待制）。有料APIを叩く機能なので、招待トークンを持つ
+-- ユーザー登録者だけが使える。管理者アカウント（admins）とは別の、一般ユーザー向けの
+-- 最小限のアカウント。認証方式は admin_sessions と同じ Bearer トークン。
+CREATE TABLE IF NOT EXISTS users (
+  id                BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  username          VARCHAR(50) NOT NULL,
+  password_hash     VARCHAR(255) NOT NULL,
+  invited_by_token  VARCHAR(32) NULL,
+  created_at        DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  last_login_at     DATETIME NULL,
+  UNIQUE KEY uq_users_username (username)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS invite_tokens (
+  id          BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  token       VARCHAR(32) NOT NULL,
+  created_by  INT UNSIGNED NULL,
+  used_by     BIGINT UNSIGNED NULL,
+  used_at     DATETIME NULL,
+  expires_at  DATETIME NULL,
+  created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_invite_created_by FOREIGN KEY (created_by) REFERENCES admins(id) ON DELETE SET NULL,
+  CONSTRAINT fk_invite_used_by FOREIGN KEY (used_by) REFERENCES users(id) ON DELETE SET NULL,
+  UNIQUE KEY uq_invite_token (token)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS user_sessions (
+  id          BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  user_id     BIGINT UNSIGNED NOT NULL,
+  token       CHAR(64) NOT NULL,
+  expires_at  DATETIME NOT NULL,
+  created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_user_session_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  UNIQUE KEY uq_user_session_token (token)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- AI生成の監査ログ兼レート制限用（1ユーザー1日あたりの生成回数の上限に使う）
+CREATE TABLE IF NOT EXISTS ai_generation_log (
+  id          BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  user_id     BIGINT UNSIGNED NOT NULL,
+  topic_id    BIGINT UNSIGNED NULL,
+  parent_topic_id BIGINT UNSIGNED NOT NULL,
+  model       VARCHAR(50) NOT NULL,
+  created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_ai_log_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  CONSTRAINT fk_ai_log_topic FOREIGN KEY (topic_id) REFERENCES topics(id) ON DELETE SET NULL,
+  INDEX idx_ai_log_user_date (user_id, created_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

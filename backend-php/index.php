@@ -60,6 +60,30 @@ try {
         exit;
     }
 
+    // --- 一般ユーザー（招待制アカウント。AI機能を使うためだけの最小限の認証） ---
+
+    if ($method === 'POST' && $segments === ['register']) {
+        require __DIR__ . '/routes/register.php';
+        exit;
+    }
+
+    if ($method === 'POST' && $segments === ['login']) {
+        require __DIR__ . '/routes/user_login.php';
+        exit;
+    }
+
+    if ($method === 'POST' && $segments === ['logout']) {
+        require __DIR__ . '/routes/user_logout.php';
+        exit;
+    }
+
+    // POST /topics/{id}/ai-deepen（要ログイン）
+    if ($method === 'POST' && count($segments) === 3 && $segments[0] === 'topics' && $segments[2] === 'ai-deepen') {
+        $topicId = $segments[1];
+        require __DIR__ . '/routes/topics_ai_deepen.php';
+        exit;
+    }
+
     // SSHの無いプランでの一回限りの管理者作成用（SETUP_TOKEN未設定なら404）
     if (($method === 'GET' || $method === 'POST') && $segments === ['setup', 'create-admin']) {
         require __DIR__ . '/routes/setup_create_admin.php';
@@ -121,6 +145,26 @@ try {
     if ($method === 'DELETE' && count($segments) === 5 && $segments[0] === 'admin' && $segments[1] === 'topics' && $segments[3] === 'relations') {
         $relationId = $segments[4];
         require __DIR__ . '/routes/admin_topic_relation_remove.php';
+        exit;
+    }
+
+    if ($method === 'POST' && $segments === ['admin', 'topics', 'ai-suggest']) {
+        require __DIR__ . '/routes/admin_topics_ai_suggest.php';
+        exit;
+    }
+
+    if ($method === 'POST' && $segments === ['admin', 'topics', 'ai-suggest-save']) {
+        require __DIR__ . '/routes/admin_topics_ai_suggest_save.php';
+        exit;
+    }
+
+    if ($method === 'GET' && $segments === ['admin', 'invite-tokens']) {
+        require __DIR__ . '/routes/admin_invite_tokens_list.php';
+        exit;
+    }
+
+    if ($method === 'POST' && $segments === ['admin', 'invite-tokens']) {
+        require __DIR__ . '/routes/admin_invite_tokens_create.php';
         exit;
     }
 
