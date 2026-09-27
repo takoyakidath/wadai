@@ -496,7 +496,8 @@
       "isStarter": true,
       "deepen": [],
       "related": [
-        "43"
+        "43",
+        "227"
       ]
     },
     {
@@ -701,7 +702,8 @@
         "61"
       ],
       "related": [
-        "58"
+        "58",
+        "234"
       ]
     },
     {
@@ -920,7 +922,8 @@
         "82",
         "84",
         "89",
-        "105"
+        "105",
+        "231"
       ]
     },
     {
@@ -945,7 +948,8 @@
         "80",
         "87",
         "93",
-        "98"
+        "98",
+        "232"
       ]
     },
     {
@@ -968,7 +972,8 @@
       ],
       "related": [
         "80",
-        "100"
+        "100",
+        "230"
       ]
     },
     {
@@ -2449,7 +2454,8 @@
       "isStarter": true,
       "deepen": [],
       "related": [
-        "208"
+        "208",
+        "226"
       ]
     },
     {
@@ -2504,7 +2510,8 @@
       "isStarter": true,
       "deepen": [],
       "related": [
-        "210"
+        "210",
+        "225"
       ]
     },
     {
@@ -2516,6 +2523,117 @@
       "deepen": [],
       "related": [
         "212"
+      ]
+    },
+    {
+      "id": "225",
+      "body": "きのこの山派？たけのこの里派？",
+      "categoryKey": "funny",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "223"
+      ]
+    },
+    {
+      "id": "226",
+      "body": "スマホの検索履歴、直近の1個だけ教えられる？",
+      "categoryKey": "funny",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "218"
+      ]
+    },
+    {
+      "id": "227",
+      "body": "タイムマシンがあったら、過去と未来どっちに行ってみたい？",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "42"
+      ]
+    },
+    {
+      "id": "228",
+      "body": "好きな匂いってなんかある？",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "229"
+      ]
+    },
+    {
+      "id": "229",
+      "body": "一番好きな音ってなんかある？（曲でも生活音でもなんでも）",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "228"
+      ]
+    },
+    {
+      "id": "230",
+      "body": "コンビニでついつい手が伸びちゃうものとかありますか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "84"
+      ]
+    },
+    {
+      "id": "231",
+      "body": "呼ばれるならどんなあだ名がいいですか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "80"
+      ]
+    },
+    {
+      "id": "232",
+      "body": "ここに来る前、何してたんですか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "82"
+      ]
+    },
+    {
+      "id": "233",
+      "body": "話を聞く時、先に結論知りたい派？経緯から聞きたい派？",
+      "categoryKey": "close_friends",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "234"
+      ]
+    },
+    {
+      "id": "234",
+      "body": "最近、ちょっと無理してるかもって思うことある？",
+      "categoryKey": "close_friends",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "233",
+        "60"
       ]
     }
   ]

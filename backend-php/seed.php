@@ -251,6 +251,19 @@ $topics = [
     ['key' => 'n19', 'body' => '今思うと、それも黒歴史の一つ？', 'category' => 'funny', 'depth' => 2],
     ['key' => 'n20', 'body' => '動物に例えると何て言われたことある？', 'category' => 'funny', 'depth' => 1, 'is_starter' => true],
     ['key' => 'n21', 'body' => '今までで一番『待って』ってなった瞬間ある？', 'category' => 'funny', 'depth' => 1, 'is_starter' => true],
+    ['key' => 'n22', 'body' => 'きのこの山派？たけのこの里派？', 'category' => 'funny', 'depth' => 1, 'is_starter' => true],
+    ['key' => 'n23', 'body' => 'スマホの検索履歴、直近の1個だけ教えられる？', 'category' => 'funny', 'depth' => 1, 'is_starter' => true],
+    // --- omakase ---
+    ['key' => 'o46', 'body' => 'タイムマシンがあったら、過去と未来どっちに行ってみたい？', 'category' => 'omakase', 'depth' => 1, 'is_starter' => true],
+    ['key' => 'o47', 'body' => '好きな匂いってなんかある？', 'category' => 'omakase', 'depth' => 1, 'is_starter' => true],
+    ['key' => 'o48', 'body' => '一番好きな音ってなんかある？（曲でも生活音でもなんでも）', 'category' => 'omakase', 'depth' => 1, 'is_starter' => true],
+    // --- first_meeting ---
+    ['key' => 'f31', 'body' => 'コンビニでついつい手が伸びちゃうものとかありますか？', 'category' => 'first_meeting', 'depth' => 1, 'is_starter' => true],
+    ['key' => 'f32', 'body' => '呼ばれるならどんなあだ名がいいですか？', 'category' => 'first_meeting', 'depth' => 1, 'is_starter' => true],
+    ['key' => 'f33', 'body' => 'ここに来る前、何してたんですか？', 'category' => 'first_meeting', 'depth' => 1, 'is_starter' => true],
+    // --- close_friends（友達） ---
+    ['key' => 'c35', 'body' => '話を聞く時、先に結論知りたい派？経緯から聞きたい派？', 'category' => 'close_friends', 'depth' => 1, 'is_starter' => true],
+    ['key' => 'c36', 'body' => '最近、ちょっと無理してるかもって思うことある？', 'category' => 'close_friends', 'depth' => 1, 'is_starter' => true],
 ];
 
 $relations = [
@@ -529,6 +542,27 @@ $relations = [
     ['from' => 'n7', 'to' => 'n20', 'type' => 'related'],
     ['from' => 'n21', 'to' => 'n9', 'type' => 'related'],
     ['from' => 'n9', 'to' => 'n21', 'type' => 'related'],
+    ['from' => 'n22', 'to' => 'n20', 'type' => 'related'],
+    ['from' => 'n20', 'to' => 'n22', 'type' => 'related'],
+    ['from' => 'n23', 'to' => 'n15', 'type' => 'related'],
+    ['from' => 'n15', 'to' => 'n23', 'type' => 'related'],
+    // --- omakase ---
+    ['from' => 'o46', 'to' => 'o42', 'type' => 'related'],
+    ['from' => 'o42', 'to' => 'o46', 'type' => 'related'],
+    ['from' => 'o47', 'to' => 'o48', 'type' => 'related'],
+    ['from' => 'o48', 'to' => 'o47', 'type' => 'related'],
+    // --- first_meeting ---
+    ['from' => 'f31', 'to' => 'f5', 'type' => 'related'],
+    ['from' => 'f5', 'to' => 'f31', 'type' => 'related'],
+    ['from' => 'f32', 'to' => 'f1', 'type' => 'related'],
+    ['from' => 'f1', 'to' => 'f32', 'type' => 'related'],
+    ['from' => 'f33', 'to' => 'f3', 'type' => 'related'],
+    ['from' => 'f3', 'to' => 'f33', 'type' => 'related'],
+    // --- close_friends（友達） ---
+    ['from' => 'c35', 'to' => 'c36', 'type' => 'related'],
+    ['from' => 'c36', 'to' => 'c35', 'type' => 'related'],
+    ['from' => 'c36', 'to' => 'c15', 'type' => 'related'],
+    ['from' => 'c15', 'to' => 'c36', 'type' => 'related'],
 ];
 
 $pdo->beginTransaction();
