@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { fetchCategories, submitTopic, type CategoryDTO } from "@/lib/api-client";
+import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 
 type Status = "idle" | "submitting" | "done" | "error";
 
@@ -12,6 +13,7 @@ export default function SubmitPage() {
   const [categories, setCategories] = useState<CategoryDTO[]>([]);
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState<string | null>(null);
+  const isOnline = useOnlineStatus();
 
   useEffect(() => {
     fetchCategories()
@@ -76,10 +78,10 @@ export default function SubmitPage() {
 
         <button
           type="submit"
-          disabled={status === "submitting" || body.trim().length === 0}
+          disabled={!isOnline || status === "submitting" || body.trim().length === 0}
           className="rounded-2xl bg-neutral-900 py-3 text-base font-bold text-white disabled:opacity-40 dark:bg-white dark:text-neutral-900"
         >
-          送信する
+          {isOnline ? "送信する" : "オンラインになったら送信できます"}
         </button>
 
         {message && (

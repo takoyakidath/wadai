@@ -60,6 +60,12 @@ try {
         exit;
     }
 
+    // SSHの無いプランでの一回限りの管理者作成用（SETUP_TOKEN未設定なら404）
+    if (($method === 'GET' || $method === 'POST') && $segments === ['setup', 'create-admin']) {
+        require __DIR__ . '/routes/setup_create_admin.php';
+        exit;
+    }
+
     // --- 管理API（すべて Bearer トークン必須） ---
 
     if ($method === 'POST' && $segments === ['admin', 'login']) {

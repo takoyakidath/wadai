@@ -8,6 +8,7 @@ import {
   fetchDeeperTopic,
   fetchRandomTopic,
   fetchRelatedTopics,
+  subscribeOfflineMode,
   type CategoryDTO,
 } from "@/lib/api-client";
 import { TopicCard } from "@/components/TopicCard";
@@ -25,12 +26,14 @@ export function GachaScreen() {
   const [relatedChoices, setRelatedChoices] = useState<TopicDTO[] | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [offline, setOffline] = useState(false);
   const party = usePartyMode();
 
   useEffect(() => {
     fetchCategories()
       .then(setCategories)
       .catch(() => setCategories([]));
+    return subscribeOfflineMode(setOffline);
   }, []);
 
   const current = history[history.length - 1] ?? null;
@@ -136,6 +139,12 @@ export function GachaScreen() {
           ＋ 話題を送る
         </Link>
       </header>
+
+      {offline && (
+        <div className="rounded-xl bg-amber-100 px-3 py-2 text-xs text-amber-800 dark:bg-amber-900 dark:text-amber-200">
+          📶 オフライン中：一部の話題のみ表示されます
+        </div>
+      )}
 
       {party.shouldPrompt && (
         <div className="flex items-center justify-between rounded-xl bg-neutral-900 px-3 py-2 text-xs text-white dark:bg-white dark:text-neutral-900">

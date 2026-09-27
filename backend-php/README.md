@@ -16,7 +16,8 @@ php cli/create_admin.php <username> <password>
 php -S localhost:8080 -t .
 ```
 
-`.env` はローカル用の値がすでに入っています（ローカルの MySQL root 接続）。
+`.env.local` があればそちらが優先される（ローカルの MySQL root 接続用の値が入っている）。
+`.env` は本番（ロリポップ）用の値を書いて、そのままFTPでアップロードする想定。
 
 ## 管理画面の認証について
 
@@ -32,7 +33,15 @@ php -S localhost:8080 -t .
 3. `.env.example` を `.env` としてコピーし、控えた接続情報と `CORS_ALLOWED_ORIGIN`（Vercel の本番URL）、`DISCORD_WEBHOOK_URL`、`SUBMISSION_IP_SALT`（ランダムな文字列）を埋める。
 4. FTP（ロリポップFTPアカウント）でこの `backend-php/` フォルダの中身一式（`.env` を含む）を、公開フォルダ配下の `api/` に丸ごとアップロード。
    - 最終的な公開URLが `https://your-domain.example.com/api/...` になるように配置する。
-5. 一度だけ `php seed.php` と `php cli/create_admin.php <username> <password>` をロリポップ上で実行する（ロリポップにSSHがあればそのまま、無ければ一時的にブラウザから直接開いて実行し、終わったら削除する）。
+5. データ投入と管理者作成：
+   - **SSHがある場合**：`php seed.php` と `php cli/create_admin.php <username> <password>` をそのまま実行。
+   - **SSHが無い場合（基本プラン）**：
+     - シード投入は `schema.sql` と同様に phpMyAdmin から `seed.php` の中身相当を手動INSERTするか、`seed.php` を一時的にブラウザから直接開いて実行し、終わったら削除する。
+     - 管理者作成は `.env` に `SETUP_TOKEN`（ランダムな文字列）を設定したうえで、ブラウザで
+       `https://your-domain.example.com/api/setup/create-admin` を開くと簡単な入力フォームが表示されるので、
+       SETUP_TOKEN・ユーザー名・パスワードを入力して送信する（`routes/setup_create_admin.php`）。
+       トークンやパスワードをURLのクエリパラメータに載せるとロリポップのアクセスログに平文で残ってしまうため、
+       あえてフォーム（POST）だけで受け付ける作りにしてある。**実行後は `.env` の `SETUP_TOKEN` を必ず空にする**（設定されている間は誰でもこのURLを知っていれば管理者を作成・上書きできてしまうため）。
 6. ロリポップの「cron設定」で以下を日次登録：
    - `php /home/ユーザー名/公開フォルダ/api/cron/cleanup_rate_limit.php`
    - `php /home/ユーザー名/公開フォルダ/api/cron/retry_webhooks.php`

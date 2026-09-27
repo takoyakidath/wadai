@@ -1,0 +1,36 @@
+{
+  "categories": [
+    { "key": "omakase", "label": "おまかせ" },
+    { "key": "first_meeting", "label": "初対面" },
+    { "key": "close_friends", "label": "仲良し" },
+    { "key": "funny", "label": "面白い" }
+  ],
+  "topics": [
+    { "id": "1", "body": "最近、時間を忘れてハマったことは？", "categoryKey": "omakase", "depth": 1, "isStarter": true, "deepen": ["2"], "related": ["5", "7"] },
+    { "id": "2", "body": "それを始めたきっかけは？", "categoryKey": "omakase", "depth": 2, "isStarter": false, "deepen": ["3"], "related": [] },
+    { "id": "3", "body": "その中で一番好きなところは？", "categoryKey": "omakase", "depth": 3, "isStarter": false, "deepen": ["4"], "related": [] },
+    { "id": "4", "body": "それを始めてから、自分の中で変わったことはある？", "categoryKey": "omakase", "depth": 4, "isStarter": false, "deepen": [], "related": [] },
+    { "id": "5", "body": "子供の頃に好きだった遊びは？", "categoryKey": "omakase", "depth": 1, "isStarter": true, "deepen": ["6"], "related": ["1"] },
+    { "id": "6", "body": "今もたまにやることある？", "categoryKey": "omakase", "depth": 2, "isStarter": false, "deepen": [], "related": [] },
+    { "id": "7", "body": "最近買ってよかったものは？", "categoryKey": "omakase", "depth": 1, "isStarter": true, "deepen": ["8", "9"], "related": ["1"] },
+    { "id": "8", "body": "どこで見つけたの？", "categoryKey": "omakase", "depth": 2, "isStarter": false, "deepen": [], "related": [] },
+    { "id": "9", "body": "他に気になってるものある？", "categoryKey": "omakase", "depth": 2, "isStarter": false, "deepen": [], "related": [] },
+
+    { "id": "10", "body": "出身はどのあたりですか？", "categoryKey": "first_meeting", "depth": 1, "isStarter": true, "deepen": ["11"], "related": ["12", "14"] },
+    { "id": "11", "body": "その土地ならではの好きなところは？", "categoryKey": "first_meeting", "depth": 2, "isStarter": false, "deepen": [], "related": [] },
+    { "id": "12", "body": "休みの日は何をして過ごすことが多いですか？", "categoryKey": "first_meeting", "depth": 1, "isStarter": true, "deepen": ["13"], "related": ["10"] },
+    { "id": "13", "body": "それを始めたきっかけは？", "categoryKey": "first_meeting", "depth": 2, "isStarter": false, "deepen": [], "related": [] },
+    { "id": "14", "body": "好きな食べ物は？", "categoryKey": "first_meeting", "depth": 1, "isStarter": true, "deepen": [], "related": ["10"] },
+
+    { "id": "15", "body": "最近、地味に嬉しかったことは？", "categoryKey": "close_friends", "depth": 1, "isStarter": true, "deepen": ["16"], "related": ["17"] },
+    { "id": "16", "body": "それって自分にとってどんな意味がある？", "categoryKey": "close_friends", "depth": 2, "isStarter": false, "deepen": [], "related": [] },
+    { "id": "17", "body": "もし1年休みが取れたら何をしたい？", "categoryKey": "close_friends", "depth": 1, "isStarter": true, "deepen": ["18"], "related": ["15"] },
+    { "id": "18", "body": "なんでそれをやってみたいと思ったの？", "categoryKey": "close_friends", "depth": 2, "isStarter": false, "deepen": ["19"], "related": [] },
+    { "id": "19", "body": "そのとき何を感じそう？", "categoryKey": "close_friends", "depth": 3, "isStarter": false, "deepen": [], "related": [] },
+
+    { "id": "20", "body": "今まで一番くだらない理由でケンカしたことは？", "categoryKey": "funny", "depth": 1, "isStarter": true, "deepen": ["21"], "related": ["22"] },
+    { "id": "21", "body": "その時どっちが折れたの？", "categoryKey": "funny", "depth": 2, "isStarter": false, "deepen": [], "related": [] },
+    { "id": "22", "body": "人生で一番の黒歴史をひとつだけ挙げるなら？", "categoryKey": "funny", "depth": 1, "isStarter": true, "deepen": ["23"], "related": ["20"] },
+    { "id": "23", "body": "今思い出しても笑える？", "categoryKey": "funny", "depth": 2, "isStarter": false, "deepen": [], "related": [] }
+  ]
+}
