@@ -93,3 +93,34 @@ export async function logoutUser(): Promise<void> {
 export function aiDeepenTopic(id: string): Promise<TopicDTO> {
   return userFetch(`/topics/${id}/ai-deepen`, { method: "POST" });
 }
+
+export async function likeTopic(id: string): Promise<void> {
+  await userFetch(`/topics/${id}/like`, { method: "POST" });
+}
+
+export async function unlikeTopic(id: string): Promise<void> {
+  await userFetch(`/topics/${id}/like`, { method: "DELETE" });
+}
+
+export async function fetchLikedTopics(): Promise<TopicDTO[]> {
+  const data = await userFetch<{ topics: TopicDTO[] }>("/likes");
+  return data.topics;
+}
+
+export function fetchRandomLikedTopic(): Promise<TopicDTO> {
+  return userFetch("/likes/random");
+}
+
+export async function toggleLikeWithRollback(
+  id: string,
+  wasLiked: boolean,
+  apply: () => void,
+  rollback: () => void,
+): Promise<void> {
+  apply();
+  try {
+    await (wasLiked ? unlikeTopic(id) : likeTopic(id));
+  } catch {
+    rollback();
+  }
+}

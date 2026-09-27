@@ -145,3 +145,15 @@ CREATE TABLE IF NOT EXISTS ai_generation_log (
   CONSTRAINT fk_ai_log_topic FOREIGN KEY (topic_id) REFERENCES topics(id) ON DELETE SET NULL,
   INDEX idx_ai_log_user_date (user_id, created_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- いいね（マイカード）。招待制ユーザーだけが使える（AI機能と同じ users を流用）。
+CREATE TABLE IF NOT EXISTS topic_likes (
+  id          BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  user_id     BIGINT UNSIGNED NOT NULL,
+  topic_id    BIGINT UNSIGNED NOT NULL,
+  created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_like_user  FOREIGN KEY (user_id)  REFERENCES users(id)  ON DELETE CASCADE,
+  CONSTRAINT fk_like_topic FOREIGN KEY (topic_id) REFERENCES topics(id) ON DELETE CASCADE,
+  UNIQUE KEY uq_like (user_id, topic_id),
+  INDEX idx_likes_user (user_id, created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

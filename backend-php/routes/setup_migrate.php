@@ -20,8 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 <style>body{font-family:sans-serif;max-width:360px;margin:40px auto;padding:0 16px}
 input{display:block;width:100%;box-sizing:border-box;padding:8px;margin:6px 0 14px;font-size:16px}
 button{padding:10px 16px;font-size:16px}</style>
-<h1>スキーマ移行（AI機能用テーブル追加）</h1>
-<p>users / invite_tokens / user_sessions / ai_generation_log を作成し、topics.source に ai_generated を追加します。何度実行しても安全です。</p>
+<h1>スキーマ移行（AI機能・いいね機能用テーブル追加）</h1>
+<p>users / invite_tokens / user_sessions / ai_generation_log / topic_likes を作成し、topics.source に ai_generated を追加します。何度実行しても安全です。</p>
 <form method="post">
   <label>SETUP_TOKEN<input type="password" name="token" required></label>
   <button type="submit">実行する</button>
@@ -85,6 +85,17 @@ $statements = [
           CONSTRAINT fk_ai_log_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
           CONSTRAINT fk_ai_log_topic FOREIGN KEY (topic_id) REFERENCES topics(id) ON DELETE SET NULL,
           INDEX idx_ai_log_user_date (user_id, created_at)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
+    'topic_likes テーブル' => "
+        CREATE TABLE IF NOT EXISTS topic_likes (
+          id          BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+          user_id     BIGINT UNSIGNED NOT NULL,
+          topic_id    BIGINT UNSIGNED NOT NULL,
+          created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+          CONSTRAINT fk_like_user  FOREIGN KEY (user_id)  REFERENCES users(id)  ON DELETE CASCADE,
+          CONSTRAINT fk_like_topic FOREIGN KEY (topic_id) REFERENCES topics(id) ON DELETE CASCADE,
+          UNIQUE KEY uq_like (user_id, topic_id),
+          INDEX idx_likes_user (user_id, created_at)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
 ];
 

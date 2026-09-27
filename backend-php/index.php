@@ -84,6 +84,32 @@ try {
         exit;
     }
 
+    // POST /topics/{id}/like（要ログイン）
+    if ($method === 'POST' && count($segments) === 3 && $segments[0] === 'topics' && $segments[2] === 'like') {
+        $topicId = $segments[1];
+        require __DIR__ . '/routes/topics_like_add.php';
+        exit;
+    }
+
+    // DELETE /topics/{id}/like（要ログイン）
+    if ($method === 'DELETE' && count($segments) === 3 && $segments[0] === 'topics' && $segments[2] === 'like') {
+        $topicId = $segments[1];
+        require __DIR__ . '/routes/topics_like_remove.php';
+        exit;
+    }
+
+    // GET /likes（要ログイン、マイカード一覧）
+    if ($method === 'GET' && $segments === ['likes']) {
+        require __DIR__ . '/routes/likes_list.php';
+        exit;
+    }
+
+    // GET /likes/random（要ログイン、マイカードから1件ランダム）
+    if ($method === 'GET' && $segments === ['likes', 'random']) {
+        require __DIR__ . '/routes/likes_random.php';
+        exit;
+    }
+
     // SSHの無いプランでの一回限りの管理者作成用（SETUP_TOKEN未設定なら404）
     if (($method === 'GET' || $method === 'POST') && $segments === ['setup', 'create-admin']) {
         require __DIR__ . '/routes/setup_create_admin.php';
