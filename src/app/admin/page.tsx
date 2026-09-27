@@ -16,6 +16,7 @@ type EditState = {
   isStarter: boolean;
   deepenParentId: string;
   relatedTopicIds: string;
+  aiExtend: boolean;
 };
 
 function initialEdit(s: SubmissionDTO): EditState {
@@ -26,6 +27,7 @@ function initialEdit(s: SubmissionDTO): EditState {
     isStarter: true,
     deepenParentId: "",
     relatedTopicIds: "",
+    aiExtend: false,
   };
 }
 
@@ -37,6 +39,7 @@ export default function AdminSubmissionsPage() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [edit, setEdit] = useState<EditState | null>(null);
   const [busy, setBusy] = useState(false);
+  const [approveResult, setApproveResult] = useState<string | null>(null);
 
   async function refresh() {
     setLoading(true);
@@ -69,8 +72,9 @@ export default function AdminSubmissionsPage() {
     if (!edit) return;
     setBusy(true);
     setError(null);
+    setApproveResult(null);
     try {
-      await approveSubmission(id, {
+      const result = await approveSubmission(id, {
         body: edit.body,
         categoryKey: edit.categoryKey || undefined,
         depth: edit.depth,
@@ -80,9 +84,17 @@ export default function AdminSubmissionsPage() {
           .split(",")
           .map((s) => s.trim())
           .filter(Boolean),
+        aiExtend: edit.aiExtend,
       });
       setExpandedId(null);
       setEdit(null);
+      if (edit.aiExtend) {
+        setApproveResult(
+          result.aiExtendedTopicIds.length > 0
+            ? `AIでLv.${edit.depth + 1}〜${edit.depth + result.aiExtendedTopicIds.length}を自動生成しました（話題ID: ${result.aiExtendedTopicIds.join(", ")}）`
+            : "採用しましたが、AIでの深め先生成はできませんでした（すでにLv.4か、生成に失敗しました）。",
+        );
+      }
       await refresh();
     } catch (e) {
       setError(e instanceof Error ? e.message : "採用に失敗しました。");
@@ -128,6 +140,7 @@ export default function AdminSubmissionsPage() {
       </div>
 
       {error && <p className="text-sm text-red-600 dark:text-red-300">{error}</p>}
+      {approveResult && <p className="text-sm text-emerald-600 dark:text-emerald-400">{approveResult}</p>}
       {loading && <p className="text-sm text-neutral-500">読み込み中…</p>}
       {!loading && submissions.length === 0 && (
         <p className="text-sm text-neutral-500">該当する申請はありません。</p>
@@ -209,6 +222,16 @@ export default function AdminSubmissionsPage() {
                     onChange={(e) => setEdit({ ...edit, isStarter: e.target.checked })}
                   />
                   初期ガチャに出す（スターター）
+                </label>
+                <label className="flex items-center gap-2 text-xs font-medium">
+                  <input
+                    type="checkbox"
+                    checked={edit.aiExtend}
+                    disabled={edit.depth >= 4}
+                    onChange={(e) => setEdit({ ...edit, aiExtend: e.target.checked })}
+                  />
+                  🤖 採用後、AIで深め先をLv.4まで自動生成する
+                  {edit.depth >= 4 && "（すでにLv.4のため不可）"}
                 </label>
                 <div className="grid grid-cols-2 gap-3">
                   <label className="flex flex-col gap-1 text-xs font-medium">

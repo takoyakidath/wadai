@@ -120,8 +120,9 @@ export function approveSubmission(
     isStarter: boolean;
     deepenParentId?: string;
     relatedTopicIds?: string[];
+    aiExtend?: boolean;
   },
-): Promise<{ topic: { id: string } }> {
+): Promise<{ topic: { id: string }; aiExtendedTopicIds: string[] }> {
   return adminFetch(`/admin/submissions/${id}/approve`, {
     method: "POST",
     body: JSON.stringify(input),

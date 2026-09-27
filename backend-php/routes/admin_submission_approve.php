@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/../lib/auth.php';
+require_once __DIR__ . '/../lib/ai.php';
 
 $pdo = wadai_db();
 wadai_require_admin($pdo);
@@ -21,6 +22,7 @@ $body = is_string($input['body'] ?? null) ? trim($input['body']) : '';
 $categoryKey = is_string($input['categoryKey'] ?? null) ? $input['categoryKey'] : null;
 $depth = is_int($input['depth'] ?? null) ? $input['depth'] : 1;
 $isStarter = !empty($input['isStarter']);
+$aiExtend = !empty($input['aiExtend']);
 $deepenParentId = isset($input['deepenParentId']) && ctype_digit((string) $input['deepenParentId'])
     ? (string) $input['deepenParentId']
     : null;
@@ -36,11 +38,15 @@ if ($depth < 1 || $depth > 4) {
 }
 
 $categoryId = null;
+$categoryLabel = null;
 if ($categoryKey !== null && $categoryKey !== '') {
-    $catStmt = $pdo->prepare('SELECT id FROM categories WHERE `key` = :key');
+    $catStmt = $pdo->prepare('SELECT id, label FROM categories WHERE `key` = :key');
     $catStmt->execute([':key' => $categoryKey]);
     $category = $catStmt->fetch();
-    $categoryId = $category !== false ? (int) $category['id'] : null;
+    if ($category !== false) {
+        $categoryId = (int) $category['id'];
+        $categoryLabel = $category['label'];
+    }
 }
 
 $pdo->beginTransaction();
@@ -82,7 +88,44 @@ try {
     throw $e;
 }
 
+// 承認後、任意でAIによる深め先チェーンの自動生成を続ける（既存のライブ深掘りと同じ関数を使う）。
+// 失敗・上限到達したらそこで打ち切り、それまでに作れた分だけ返す（承認自体は失敗させない）。
+$aiExtendedTopicIds = [];
+if ($aiExtend) {
+    $parentBody = $body;
+    $parentId = $topicId;
+    for ($nextDepth = $depth + 1; $nextDepth <= 4; $nextDepth++) {
+        $generated = wadai_ai_generate_deeper_topic($parentBody, $nextDepth, $categoryLabel);
+        if ($generated === null) {
+            break;
+        }
+
+        $pdo->beginTransaction();
+        try {
+            $pdo->prepare(
+                'INSERT INTO topics (body, category_id, depth, is_starter, status, source)
+                 VALUES (:body, :category_id, :depth, 0, "published", "ai_generated")'
+            )->execute([':body' => $generated, ':category_id' => $categoryId, ':depth' => $nextDepth]);
+            $newTopicId = (int) $pdo->lastInsertId();
+
+            $pdo->prepare(
+                'INSERT INTO topic_relations (from_topic_id, to_topic_id, relation_type) VALUES (:from, :to, "deepen")'
+            )->execute([':from' => $parentId, ':to' => $newTopicId]);
+
+            $pdo->commit();
+        } catch (Throwable $e) {
+            $pdo->rollBack();
+            break;
+        }
+
+        $aiExtendedTopicIds[] = (string) $newTopicId;
+        $parentBody = $generated;
+        $parentId = $newTopicId;
+    }
+}
+
 wadai_json([
     'submission' => ['id' => $submissionId, 'status' => 'approved'],
     'topic' => ['id' => (string) $topicId, 'status' => 'published'],
+    'aiExtendedTopicIds' => $aiExtendedTopicIds,
 ]);
