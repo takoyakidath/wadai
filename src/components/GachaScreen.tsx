@@ -11,7 +11,7 @@ import {
   subscribeOfflineMode,
   type CategoryDTO,
 } from "@/lib/api-client";
-import { aiDeepenTopic, logoutUser } from "@/lib/user-api-client";
+import { aiDeepenTopic, fetchLikedTopics, logoutUser, toggleLikeWithRollback } from "@/lib/user-api-client";
 import { categoryIcon, categoryTheme } from "@/lib/categories";
 import { useIsLoggedIn } from "@/hooks/useUserSession";
 import { TopicCard } from "@/components/TopicCard";
@@ -35,8 +35,16 @@ export function GachaScreen() {
   const [offline, setOffline] = useState(false);
   const party = usePartyMode();
   const isLoggedIn = useIsLoggedIn();
+  const [likedIds, setLikedIds] = useState<Set<string>>(new Set());
+  const [likedIdsForLoginState, setLikedIdsForLoginState] = useState(isLoggedIn);
   const tabsRef = useRef<HTMLDivElement>(null);
   const [tabScroll, setTabScroll] = useState({ left: false, right: false });
+
+  // ログイン状態が切り替わったら、前のユーザーのいいね状態が一瞬でも見えないように同じレンダーで消す。
+  if (isLoggedIn !== likedIdsForLoginState) {
+    setLikedIdsForLoginState(isLoggedIn);
+    setLikedIds(new Set());
+  }
 
   useEffect(() => {
     fetchCategories()
@@ -44,6 +52,13 @@ export function GachaScreen() {
       .catch(() => setCategories([]));
     return subscribeOfflineMode(setOffline);
   }, []);
+
+  useEffect(() => {
+    if (!isLoggedIn) return;
+    fetchLikedTopics()
+      .then((topics) => setLikedIds(new Set(topics.map((t) => t.id))))
+      .catch(() => {});
+  }, [isLoggedIn]);
 
   function updateTabScroll() {
     const el = tabsRef.current;
@@ -128,9 +143,42 @@ export function GachaScreen() {
     });
   }
 
+  function toggleLike(topic: TopicDTO) {
+    const wasLiked = likedIds.has(topic.id);
+    void toggleLikeWithRollback(
+      topic.id,
+      wasLiked,
+      () =>
+        setLikedIds((prev) => {
+          const next = new Set(prev);
+          if (wasLiked) next.delete(topic.id);
+          else next.add(topic.id);
+          return next;
+        }),
+      () =>
+        setLikedIds((prev) => {
+          const next = new Set(prev);
+          if (wasLiked) next.add(topic.id);
+          else next.delete(topic.id);
+          return next;
+        }),
+    );
+  }
+
   function pickRelated(topic: TopicDTO) {
     setHistory((prev) => [...prev, topic]);
     setRelatedChoices(null);
+  }
+
+  function widenSwipe() {
+    if (!current) return;
+    return withLoading(async () => {
+      const topics = await fetchRelatedTopics(current.id);
+      if (topics.length === 0) {
+        throw new Error("この話題にはまだ広げる先がありません。");
+      }
+      setHistory((prev) => [...prev, topics[0]]);
+    });
   }
 
   function selectCategory(key: string) {
@@ -195,6 +243,11 @@ export function GachaScreen() {
           <Link href="/submit" className="underline-offset-2 hover:underline">
             ＋ 話題を送る
           </Link>
+          {isLoggedIn && (
+            <Link href="/mycard" className="underline-offset-2 hover:underline">
+              ❤️ マイカード
+            </Link>
+          )}
           {isLoggedIn ? (
             <button type="button" onClick={() => void logoutUser()} className="underline-offset-2 hover:underline">
               ログアウト
@@ -278,7 +331,16 @@ export function GachaScreen() {
           </div>
         )}
         {current ? (
-          <TopicCard key={current.id} topic={current} />
+          <TopicCard
+            key={current.id}
+            topic={current}
+            liked={likedIds.has(current.id)}
+            onToggleLike={isLoggedIn ? () => toggleLike(current) : undefined}
+            onTapDeepen={() => void deepen()}
+            onSwipeUp={() => void roll()}
+            onSwipeSide={() => void widenSwipe()}
+            swipeDisabled={loading}
+          />
         ) : (
           <p className="text-center text-sm text-neutral-500 dark:text-neutral-400">
             モードを選んで、🎲でスタート。
@@ -294,7 +356,7 @@ export function GachaScreen() {
       <div className="flex flex-col gap-3 pb-2">
         {current ? (
           <div className="flex gap-2">
-            <ActionButtons {...actionProps} />
+            <ActionButtons {...actionProps} compact />
           </div>
         ) : (
           <button

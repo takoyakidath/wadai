@@ -41,8 +41,17 @@ body {
   animation: wadai-card-in 0.32s ease-out;
 }
 
+/* スワイプ操作：離した瞬間に指を離れて「戻る／飛んでいく」動き */
+.wadai-card-drag {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .wadai-card-in {
     animation: none;
+  }
+
+  .wadai-card-drag {
+    transition: none;
   }
 }
