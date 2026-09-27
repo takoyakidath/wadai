@@ -26,12 +26,12 @@ if ($body === '' || mb_strlen($body) > 200) {
 
 // 直近5分以内の同一IP・同一本文の重複投稿を防ぐ
 $dupStmt = $pdo->prepare(
-    'SELECT id FROM submissions WHERE submitter_ip_hash = :ip_hash AND body = :body AND created_at >= :since LIMIT 1'
+    'SELECT id FROM submissions
+     WHERE submitter_ip_hash = :ip_hash AND body = :body AND created_at >= NOW() - INTERVAL 5 MINUTE LIMIT 1'
 );
 $dupStmt->execute([
     ':ip_hash' => $ipHash,
     ':body' => $body,
-    ':since' => date('Y-m-d H:i:s', time() - 300),
 ]);
 if ($dupStmt->fetch() !== false) {
     wadai_error('duplicate_submission', '同じ内容が最近送信されています。', 409);

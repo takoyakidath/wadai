@@ -3,15 +3,19 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/auth.php'; // wadai_bearer_token() を共有
 
-const WADAI_USER_SESSION_TTL_SECONDS = 60 * 60 * 24 * 30; // 30日（一般ユーザーなので管理者より長め）
+const WADAI_USER_SESSION_TTL_DAYS = 30; // 一般ユーザーなので管理者より長め
 
 function wadai_create_user_session(PDO $pdo, int $userId): array
 {
     $token = bin2hex(random_bytes(32));
-    $expiresAt = date('Y-m-d H:i:s', time() + WADAI_USER_SESSION_TTL_SECONDS);
 
-    $pdo->prepare('INSERT INTO user_sessions (user_id, token, expires_at) VALUES (:user_id, :token, :expires_at)')
-        ->execute([':user_id' => $userId, ':token' => $token, ':expires_at' => $expiresAt]);
+    // admin_sessions と同じ理由で、expires_at はMySQL側のNOW()で一貫して計算する。
+    $pdo->prepare(
+        'INSERT INTO user_sessions (user_id, token, expires_at)
+         VALUES (:user_id, :token, NOW() + INTERVAL :ttl_days DAY)'
+    )->execute([':user_id' => $userId, ':token' => $token, ':ttl_days' => WADAI_USER_SESSION_TTL_DAYS]);
+
+    $expiresAt = $pdo->query('SELECT NOW() + INTERVAL ' . WADAI_USER_SESSION_TTL_DAYS . ' DAY')->fetchColumn();
 
     return ['token' => $token, 'expiresAt' => $expiresAt];
 }

@@ -1,3 +1,14 @@
+# Apache/PHP-CGI 環境（ロリポップ含む共用サーバーでよくある構成）では、
+# Authorization ヘッダーがデフォルトでPHPに渡されないことがある。
+# Bearer トークン認証を使っているので、明示的に通す。
+<IfModule mod_setenvif.c>
+  SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+</IfModule>
+<IfModule mod_headers.c>
+  CGIPassAuth On
+</IfModule>
 RewriteEngine On
+RewriteCond %{HTTP:Authorization} ^(.+)$
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%1]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]

@@ -7,13 +7,16 @@ declare(strict_types=1);
  */
 function wadai_check_rate_limit(PDO $pdo, string $bucket, string $ipHash, int $maxHits, int $windowSeconds): bool
 {
+    // PHPの時計ではなくMySQL側のNOW()で「窓の開始時刻」を計算する（PHP/MySQL間の
+    // タイムゾーン差でレート制限がズレるのを防ぐ。§セッション有効期限と同じ理由）。
     $stmt = $pdo->prepare(
-        'SELECT COUNT(*) FROM rate_limit_hits WHERE bucket = :bucket AND ip_hash = :ip_hash AND created_at >= :since'
+        'SELECT COUNT(*) FROM rate_limit_hits
+         WHERE bucket = :bucket AND ip_hash = :ip_hash AND created_at >= NOW() - INTERVAL :window_seconds SECOND'
     );
     $stmt->execute([
         ':bucket' => $bucket,
         ':ip_hash' => $ipHash,
-        ':since' => date('Y-m-d H:i:s', time() - $windowSeconds),
+        ':window_seconds' => $windowSeconds,
     ]);
     $count = (int) $stmt->fetchColumn();
 

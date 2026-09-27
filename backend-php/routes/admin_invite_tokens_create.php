@@ -10,10 +10,19 @@ $input = wadai_read_json_body();
 $expiresInDays = isset($input['expiresInDays']) && is_int($input['expiresInDays']) ? $input['expiresInDays'] : 30;
 
 $token = bin2hex(random_bytes(12)); // 24文字
-$expiresAt = $expiresInDays > 0 ? date('Y-m-d H:i:s', time() + $expiresInDays * 86400) : null;
 
-$pdo->prepare(
-    'INSERT INTO invite_tokens (token, created_by, expires_at) VALUES (:token, :created_by, :expires_at)'
-)->execute([':token' => $token, ':created_by' => $adminId, ':expires_at' => $expiresAt]);
+// expires_at はMySQL側のNOW()で計算する（PHP/MySQLのタイムゾーン差を避けるため）。
+if ($expiresInDays > 0) {
+    $pdo->prepare(
+        'INSERT INTO invite_tokens (token, created_by, expires_at) VALUES (:token, :created_by, NOW() + INTERVAL :days DAY)'
+    )->execute([':token' => $token, ':created_by' => $adminId, ':days' => $expiresInDays]);
+} else {
+    $pdo->prepare(
+        'INSERT INTO invite_tokens (token, created_by, expires_at) VALUES (:token, :created_by, NULL)'
+    )->execute([':token' => $token, ':created_by' => $adminId]);
+}
 
-wadai_json(['token' => $token, 'expiresAt' => $expiresAt], 201);
+$expiresAt = $pdo->prepare('SELECT expires_at FROM invite_tokens WHERE token = :token');
+$expiresAt->execute([':token' => $token]);
+
+wadai_json(['token' => $token, 'expiresAt' => $expiresAt->fetchColumn()], 201);

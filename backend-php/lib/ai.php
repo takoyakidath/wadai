@@ -16,10 +16,12 @@ function wadai_mb_trim(string $text): string
 
 function wadai_ai_daily_count(PDO $pdo, int $userId): int
 {
+    // 「今日」の境界はMySQL側のCURDATE()で判定する（PHPの date() だと
+    // PHP/MySQLのタイムゾーン設定差で「今日」がズレる）。
     $stmt = $pdo->prepare(
-        'SELECT COUNT(*) FROM ai_generation_log WHERE user_id = :user_id AND created_at >= :since'
+        'SELECT COUNT(*) FROM ai_generation_log WHERE user_id = :user_id AND created_at >= CURDATE()'
     );
-    $stmt->execute([':user_id' => $userId, ':since' => date('Y-m-d 00:00:00')]);
+    $stmt->execute([':user_id' => $userId]);
     return (int) $stmt->fetchColumn();
 }
 

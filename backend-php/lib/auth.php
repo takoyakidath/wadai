@@ -1,26 +1,39 @@
 <?php
 declare(strict_types=1);
 
-const WADAI_SESSION_TTL_SECONDS = 60 * 60 * 12; // 12時間
+const WADAI_SESSION_TTL_HOURS = 12;
 
 function wadai_create_session(PDO $pdo, int $adminId): array
 {
     $token = bin2hex(random_bytes(32));
-    $expiresAt = date('Y-m-d H:i:s', time() + WADAI_SESSION_TTL_SECONDS);
 
-    $pdo->prepare('INSERT INTO admin_sessions (admin_id, token, expires_at) VALUES (:admin_id, :token, :expires_at)')
-        ->execute([':admin_id' => $adminId, ':token' => $token, ':expires_at' => $expiresAt]);
+    // expires_at は PHP側で計算せず、MySQL側の NOW() で一貫して計算する。
+    // PHPとMySQLでタイムゾーン設定がズレていると、作成直後のセッションが
+    // 「もう期限切れ」に見えてしまうバグになるため（本番で実際に発生した）。
+    $pdo->prepare(
+        'INSERT INTO admin_sessions (admin_id, token, expires_at)
+         VALUES (:admin_id, :token, NOW() + INTERVAL :ttl_hours HOUR)'
+    )->execute([':admin_id' => $adminId, ':token' => $token, ':ttl_hours' => WADAI_SESSION_TTL_HOURS]);
+
+    $expiresAt = $pdo->query('SELECT NOW() + INTERVAL ' . WADAI_SESSION_TTL_HOURS . ' HOUR')->fetchColumn();
 
     return ['token' => $token, 'expiresAt' => $expiresAt];
 }
 
 function wadai_bearer_token(): ?string
 {
-    $header = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
+    // 共用サーバー（Apache+PHP-CGI等）では Authorization ヘッダーが
+    // $_SERVER['HTTP_AUTHORIZATION'] に来ず、mod_rewrite 経由だと
+    // REDIRECT_HTTP_AUTHORIZATION にリネームされることがある（.htaccess 側でも対策済み）。
+    $header = $_SERVER['HTTP_AUTHORIZATION']
+        ?? $_SERVER['REDIRECT_HTTP_AUTHORIZATION']
+        ?? '';
+
     if ($header === '' && function_exists('apache_request_headers')) {
         $headers = apache_request_headers();
-        $header = $headers['Authorization'] ?? '';
+        $header = $headers['Authorization'] ?? $headers['authorization'] ?? '';
     }
+
     if (preg_match('/^Bearer\s+(.+)$/i', $header, $m) === 1) {
         return trim($m[1]);
     }
