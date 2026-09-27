@@ -32,7 +32,7 @@
   "topics": [
     {
       "id": "1",
-      "body": "最近、時間を忘れてハマったことは？",
+      "body": "最近、時間忘れるくらいハマってることある？",
       "categoryKey": "omakase",
       "depth": 1,
       "isStarter": true,
@@ -47,7 +47,7 @@
     },
     {
       "id": "2",
-      "body": "それを始めたきっかけは？",
+      "body": "それ始めたきっかけって何？",
       "categoryKey": "omakase",
       "depth": 2,
       "isStarter": false,
@@ -58,7 +58,7 @@
     },
     {
       "id": "3",
-      "body": "その中で一番好きなところは？",
+      "body": "その中で一番好きなとこどこ？",
       "categoryKey": "omakase",
       "depth": 3,
       "isStarter": false,
@@ -69,7 +69,7 @@
     },
     {
       "id": "4",
-      "body": "それを始めてから、自分の中で変わったことはある？",
+      "body": "それ始めてから、自分の中で変わったことある？",
       "categoryKey": "omakase",
       "depth": 4,
       "isStarter": false,
@@ -78,7 +78,7 @@
     },
     {
       "id": "5",
-      "body": "子供の頃に好きだった遊びは？",
+      "body": "子供の頃ハマってた遊びって何？",
       "categoryKey": "omakase",
       "depth": 1,
       "isStarter": true,
@@ -91,7 +91,7 @@
     },
     {
       "id": "6",
-      "body": "今もたまにやることある？",
+      "body": "今もたまにやったりする？",
       "categoryKey": "omakase",
       "depth": 2,
       "isStarter": false,
@@ -100,7 +100,7 @@
     },
     {
       "id": "7",
-      "body": "最近買ってよかったものは？",
+      "body": "最近買って良かったものある？",
       "categoryKey": "omakase",
       "depth": 1,
       "isStarter": true,
@@ -110,7 +110,7 @@
       ],
       "related": [
         "1",
-        "129"
+        "36"
       ]
     },
     {
@@ -133,7 +133,7 @@
     },
     {
       "id": "10",
-      "body": "最近、寝る前についつい開いちゃうアプリは？",
+      "body": "寝る前についつい開いちゃうアプリって何？",
       "categoryKey": "omakase",
       "depth": 1,
       "isStarter": true,
@@ -144,12 +144,12 @@
         "13",
         "16",
         "1",
-        "123"
+        "30"
       ]
     },
     {
       "id": "11",
-      "body": "そのアプリで一番時間溶かしたコンテンツは？",
+      "body": "そのアプリで一番時間溶けたコンテンツ何？",
       "categoryKey": "omakase",
       "depth": 2,
       "isStarter": false,
@@ -160,7 +160,7 @@
     },
     {
       "id": "12",
-      "body": "それを友達にもすすめたことある？",
+      "body": "それ友達にもすすめたことある？",
       "categoryKey": "omakase",
       "depth": 3,
       "isStarter": false,
@@ -183,7 +183,7 @@
     },
     {
       "id": "14",
-      "body": "何がきっかけでその曲を知ったの？",
+      "body": "何がきっかけでその曲知ったの？",
       "categoryKey": "omakase",
       "depth": 2,
       "isStarter": false,
@@ -203,7 +203,7 @@
     },
     {
       "id": "16",
-      "body": "スマホのホーム画面、一番目立つところに置いてるアプリは？",
+      "body": "ホーム画面、一番目立つとこに置いてるアプリ何？",
       "categoryKey": "omakase",
       "depth": 1,
       "isStarter": true,
@@ -235,7 +235,7 @@
       "related": [
         "13",
         "21",
-        "120"
+        "27"
       ]
     },
     {
@@ -260,7 +260,7 @@
     },
     {
       "id": "21",
-      "body": "最近見て良かった動画・配信は？",
+      "body": "最近見て良かった動画とか配信ある？",
       "categoryKey": "omakase",
       "depth": 1,
       "isStarter": true,
@@ -269,7 +269,7 @@
       ],
       "related": [
         "18",
-        "127"
+        "34"
       ]
     },
     {
@@ -283,24 +283,21 @@
     },
     {
       "id": "23",
-      "body": "最近、地味に嬉しかったことは？",
-      "categoryKey": "close_friends",
+      "body": "最近、写真より動画で撮る方が増えた？",
+      "categoryKey": "omakase",
       "depth": 1,
       "isStarter": true,
       "deepen": [
         "24"
       ],
       "related": [
-        "25",
-        "33",
-        "30",
-        "140"
+        "25"
       ]
     },
     {
       "id": "24",
-      "body": "それって自分にとってどんな意味がある？",
-      "categoryKey": "close_friends",
+      "body": "残しておきたくなるのはどんな瞬間？",
+      "categoryKey": "omakase",
       "depth": 2,
       "isStarter": false,
       "deepen": [],
@@ -308,8 +305,8 @@
     },
     {
       "id": "25",
-      "body": "もし1年休みが取れたら何をしたい？",
-      "categoryKey": "close_friends",
+      "body": "1日でスマホ一番触ってる時間帯っていつ？",
+      "categoryKey": "omakase",
       "depth": 1,
       "isStarter": true,
       "deepen": [
@@ -321,17 +318,269 @@
     },
     {
       "id": "26",
+      "body": "その時間、大体何見てる？",
+      "categoryKey": "omakase",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "27",
+      "body": "推し活してるなら、グッズって何か持ってる？",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "28"
+      ],
+      "related": [
+        "18"
+      ]
+    },
+    {
+      "id": "28",
+      "body": "一番お気に入りのグッズどれ？",
+      "categoryKey": "omakase",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [
+        "29"
+      ],
+      "related": []
+    },
+    {
+      "id": "29",
+      "body": "それ、どこに飾ってる（しまってる）？",
+      "categoryKey": "omakase",
+      "depth": 3,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "30",
+      "body": "友達との写真とか動画、一番残してるのどのアプリ？",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "31"
+      ],
+      "related": [
+        "10"
+      ]
+    },
+    {
+      "id": "31",
+      "body": "見返すことある？",
+      "categoryKey": "omakase",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "32",
+      "body": "最近バイトしてる？（したことある？）",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "33"
+      ],
+      "related": []
+    },
+    {
+      "id": "33",
+      "body": "そのバイト選んだ理由ある？",
+      "categoryKey": "omakase",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "34",
+      "body": "課金したことあるアプリやゲームある？",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "35"
+      ],
+      "related": [
+        "21"
+      ]
+    },
+    {
+      "id": "35",
+      "body": "それ、今振り返ってどう思う？",
+      "categoryKey": "omakase",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "36",
+      "body": "最近、誰かに『それいいね』って言われて嬉しかったものある？",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "37"
+      ],
+      "related": [
+        "7"
+      ]
+    },
+    {
+      "id": "37",
+      "body": "自分でも気に入ってるポイントどこだった？",
+      "categoryKey": "omakase",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "38",
+      "body": "誕生日っていつ？",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "39"
+      ]
+    },
+    {
+      "id": "39",
+      "body": "兄弟姉妹いる？",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "40"
+      ],
+      "related": [
+        "38"
+      ]
+    },
+    {
+      "id": "40",
+      "body": "仲良い方？",
+      "categoryKey": "omakase",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "41",
+      "body": "動物に例えると何だと思う？",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "44"
+      ]
+    },
+    {
+      "id": "42",
+      "body": "無人島に1つだけ持っていけるなら何持ってく？",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "43"
+      ]
+    },
+    {
+      "id": "43",
+      "body": "1日だけ誰かになれるなら誰になりたい？",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "42"
+      ]
+    },
+    {
+      "id": "44",
+      "body": "犬派？猫派？",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "41"
+      ]
+    },
+    {
+      "id": "45",
+      "body": "朝型？夜型？",
+      "categoryKey": "omakase",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "46",
+      "body": "最近、地味に嬉しかったことなんかあった？",
+      "categoryKey": "close_friends",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "47"
+      ],
+      "related": [
+        "48",
+        "56",
+        "53",
+        "72"
+      ]
+    },
+    {
+      "id": "47",
+      "body": "それって自分にとってどんな意味がある？",
+      "categoryKey": "close_friends",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "48",
+      "body": "もし1年休みが取れたら何をしたい？",
+      "categoryKey": "close_friends",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "49"
+      ],
+      "related": [
+        "46"
+      ]
+    },
+    {
+      "id": "49",
       "body": "なんでそれをやってみたいと思ったの？",
       "categoryKey": "close_friends",
       "depth": 2,
       "isStarter": false,
       "deepen": [
-        "27"
+        "50"
       ],
       "related": []
     },
     {
-      "id": "27",
+      "id": "50",
       "body": "そのとき何を感じそう？",
       "categoryKey": "close_friends",
       "depth": 3,
@@ -340,20 +589,20 @@
       "related": []
     },
     {
-      "id": "28",
+      "id": "51",
       "body": "グループLINEで一番テンション上がるスタンプって何？",
       "categoryKey": "close_friends",
       "depth": 1,
       "isStarter": true,
       "deepen": [
-        "29"
+        "52"
       ],
       "related": [
-        "30"
+        "53"
       ]
     },
     {
-      "id": "29",
+      "id": "52",
       "body": "それ実際どんな時に使う？",
       "categoryKey": "close_friends",
       "depth": 2,
@@ -362,33 +611,33 @@
       "related": []
     },
     {
-      "id": "30",
+      "id": "53",
       "body": "今の友達グループの中で自分ってどんなポジションだと思う？",
       "categoryKey": "close_friends",
       "depth": 1,
       "isStarter": true,
       "deepen": [
-        "31"
+        "54"
       ],
       "related": [
-        "28",
-        "23",
-        "131"
+        "51",
+        "46",
+        "63"
       ]
     },
     {
-      "id": "31",
+      "id": "54",
       "body": "そのポジション、自分でも気に入ってる？",
       "categoryKey": "close_friends",
       "depth": 2,
       "isStarter": false,
       "deepen": [
-        "32"
+        "55"
       ],
       "related": []
     },
     {
-      "id": "32",
+      "id": "55",
       "body": "昔からそういうタイプだった？",
       "categoryKey": "close_friends",
       "depth": 3,
@@ -397,22 +646,22 @@
       "related": []
     },
     {
-      "id": "33",
+      "id": "56",
       "body": "友達に地味に感謝してることある？",
       "categoryKey": "close_friends",
       "depth": 1,
       "isStarter": true,
       "deepen": [
-        "34"
+        "57"
       ],
       "related": [
-        "23",
-        "133",
-        "142"
+        "46",
+        "65",
+        "74"
       ]
     },
     {
-      "id": "34",
+      "id": "57",
       "body": "それ、ちゃんと言葉にして伝えたことある？",
       "categoryKey": "close_friends",
       "depth": 2,
@@ -421,20 +670,20 @@
       "related": []
     },
     {
-      "id": "35",
-      "body": "最近、誰かに『わかる』って共感しまくったことは？",
+      "id": "58",
+      "body": "最近、誰かに『わかる』って共感しまくったことある？",
       "categoryKey": "close_friends",
       "depth": 1,
       "isStarter": true,
       "deepen": [
-        "36"
+        "59"
       ],
       "related": [
-        "37"
+        "60"
       ]
     },
     {
-      "id": "36",
+      "id": "59",
       "body": "それ話したらどんな反応された？",
       "categoryKey": "close_friends",
       "depth": 2,
@@ -443,31 +692,31 @@
       "related": []
     },
     {
-      "id": "37",
+      "id": "60",
       "body": "自分が一番落ち込んでる時、誰に連絡する？",
       "categoryKey": "close_friends",
       "depth": 1,
       "isStarter": true,
       "deepen": [
-        "38"
+        "61"
       ],
       "related": [
-        "35"
+        "58"
       ]
     },
     {
-      "id": "38",
+      "id": "61",
       "body": "その人のどんなところが安心する？",
       "categoryKey": "close_friends",
       "depth": 2,
       "isStarter": false,
       "deepen": [
-        "39"
+        "62"
       ],
       "related": []
     },
     {
-      "id": "39",
+      "id": "62",
       "body": "自分もその人にとってそういう存在になれてると思う？",
       "categoryKey": "close_friends",
       "depth": 3,
@@ -476,321 +725,53 @@
       "related": []
     },
     {
-      "id": "40",
-      "body": "出身はどのあたりですか？",
-      "categoryKey": "first_meeting",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "41"
-      ],
-      "related": [
-        "42",
-        "44",
-        "49"
-      ]
-    },
-    {
-      "id": "41",
-      "body": "その土地ならではの好きなところは？",
-      "categoryKey": "first_meeting",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "42",
-      "body": "休みの日は何をして過ごすことが多いですか？",
-      "categoryKey": "first_meeting",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "43"
-      ],
-      "related": [
-        "40",
-        "47",
-        "53",
-        "146"
-      ]
-    },
-    {
-      "id": "43",
-      "body": "それを始めたきっかけは？",
-      "categoryKey": "first_meeting",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "44",
-      "body": "好きな食べ物は？",
-      "categoryKey": "first_meeting",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "50"
-      ],
-      "related": [
-        "40",
-        "148"
-      ]
-    },
-    {
-      "id": "45",
-      "body": "普段よく聴く音楽のジャンルは？",
-      "categoryKey": "first_meeting",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "46"
-      ],
-      "related": [
-        "51",
-        "149"
-      ]
-    },
-    {
-      "id": "46",
-      "body": "そのジャンルにハマったきっかけは？",
-      "categoryKey": "first_meeting",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "47",
-      "body": "休みの日、朝は早い派？遅い派？",
-      "categoryKey": "first_meeting",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "48"
-      ],
-      "related": [
-        "42"
-      ]
-    },
-    {
-      "id": "48",
-      "body": "その時間、何して過ごすことが多い？",
-      "categoryKey": "first_meeting",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "49",
-      "body": "初めて話す人にちょっと聞いてみたいこと、逆にありますか？",
-      "categoryKey": "first_meeting",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "40"
-      ]
-    },
-    {
-      "id": "50",
-      "body": "好きな食べ物とは逆に、ちょっと苦手な食べ物ってありますか？",
-      "categoryKey": "first_meeting",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "51",
-      "body": "普段どんなSNSをよく見てますか？",
-      "categoryKey": "first_meeting",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "52"
-      ],
-      "related": [
-        "45",
-        "143"
-      ]
-    },
-    {
-      "id": "52",
-      "body": "そこで最近ハマったコンテンツは？",
-      "categoryKey": "first_meeting",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "53",
-      "body": "部活や委員会は何かやってますか？",
-      "categoryKey": "first_meeting",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "54"
-      ],
-      "related": [
-        "42"
-      ]
-    },
-    {
-      "id": "54",
-      "body": "それを選んだ理由ってありますか？",
-      "categoryKey": "first_meeting",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "55",
-      "body": "今、一番気合い入れてる学校行事って何？（文化祭・体育祭・修学旅行とか）",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "56"
-      ],
-      "related": [
-        "58",
-        "153",
-        "155"
-      ]
-    },
-    {
-      "id": "56",
-      "body": "そこで自分は何の担当してる（してた）？",
-      "categoryKey": "school",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [
-        "57"
-      ],
-      "related": []
-    },
-    {
-      "id": "57",
-      "body": "本番、どんな感じになりそう？",
-      "categoryKey": "school",
-      "depth": 3,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "58",
-      "body": "部活や委員会で、今の一番の悩みってある？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "59"
-      ],
-      "related": [
-        "55",
-        "60",
-        "162"
-      ]
-    },
-    {
-      "id": "59",
-      "body": "それ、誰かに相談したことある？",
-      "categoryKey": "school",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "60",
-      "body": "テスト期間、直前になって焦るタイプ？コツコツやるタイプ？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "61"
-      ],
-      "related": [
-        "72",
-        "58"
-      ]
-    },
-    {
-      "id": "61",
-      "body": "テスト前日は何して過ごすことが多い？",
-      "categoryKey": "school",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "62",
-      "body": "学校で一番好きな時間帯って授業中・休み時間・放課後のどれ？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "63"
-      ],
-      "related": [
-        "69",
-        "161"
-      ]
-    },
-    {
       "id": "63",
-      "body": "その時間、大体何して過ごしてる？",
-      "categoryKey": "school",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
+      "body": "友達グループの裏話、実はここだけの話ってある？",
+      "categoryKey": "close_friends",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "64"
+      ],
+      "related": [
+        "53"
+      ]
     },
     {
       "id": "64",
-      "body": "席替え、好きな方？苦手な方？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "65"
-      ],
-      "related": [
-        "66"
-      ]
-    },
-    {
-      "id": "65",
-      "body": "理想の席の場所ってある？",
-      "categoryKey": "school",
+      "body": "それ、話してもいいやつ？",
+      "categoryKey": "close_friends",
       "depth": 2,
       "isStarter": false,
       "deepen": [],
       "related": []
     },
     {
-      "id": "66",
-      "body": "クラスで地味に定番になってる『あるある』ネタってある？",
-      "categoryKey": "school",
+      "id": "65",
+      "body": "友達に一番『助かった』って思った瞬間いつだった？",
+      "categoryKey": "close_friends",
       "depth": 1,
       "isStarter": true,
-      "deepen": [],
+      "deepen": [
+        "66"
+      ],
       "related": [
-        "64",
-        "158"
+        "56"
       ]
     },
     {
+      "id": "66",
+      "body": "それ、ちゃんとお礼言えた？",
+      "categoryKey": "close_friends",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
       "id": "67",
-      "body": "最近、授業中にこっそり考え事してたことある？",
-      "categoryKey": "school",
+      "body": "友達とケンカした時、仲直りのきっかけになるのはどっちが多い？",
+      "categoryKey": "close_friends",
       "depth": 1,
       "isStarter": true,
       "deepen": [
@@ -800,772 +781,6 @@
     },
     {
       "id": "68",
-      "body": "それ、先生にバレたことある？",
-      "categoryKey": "school",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "69",
-      "body": "お昼、どこで誰と食べることが多い？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "70"
-      ],
-      "related": [
-        "62"
-      ]
-    },
-    {
-      "id": "70",
-      "body": "そのメンバーになった経緯ってある？",
-      "categoryKey": "school",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "71",
-      "body": "制服、自分なりにアレンジしてる部分ある？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "72",
-      "body": "進路や将来のこと、今どのくらい考えてる？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "73"
-      ],
-      "related": [
-        "60"
-      ]
-    },
-    {
-      "id": "73",
-      "body": "そう思うようになったきっかけってある？",
-      "categoryKey": "school",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [
-        "74"
-      ],
-      "related": []
-    },
-    {
-      "id": "74",
-      "body": "それ、親や先生に話したことある？",
-      "categoryKey": "school",
-      "depth": 3,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "75",
-      "body": "好きな人ができると、まず変わることってどんなところ？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "76"
-      ],
-      "related": [
-        "78",
-        "88"
-      ]
-    },
-    {
-      "id": "76",
-      "body": "それ、自分で気づいてた？周りに指摘された？",
-      "categoryKey": "romance",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [
-        "77"
-      ],
-      "related": []
-    },
-    {
-      "id": "77",
-      "body": "それが一番当てはまったのっていつ頃？",
-      "categoryKey": "romance",
-      "depth": 3,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "78",
-      "body": "好きなタイプ、外見と中身どっちを先に見る？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "79"
-      ],
-      "related": [
-        "75"
-      ]
-    },
-    {
-      "id": "79",
-      "body": "その基準、いつ頃からそうなった？",
-      "categoryKey": "romance",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "80",
-      "body": "気になる人ができた時、最初にすることってある？（SNSチェックとか）",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "81"
-      ],
-      "related": [
-        "84"
-      ]
-    },
-    {
-      "id": "81",
-      "body": "それで印象変わったことある？",
-      "categoryKey": "romance",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "82",
-      "body": "告白は自分からするタイプ？されるの待つタイプ？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "83"
-      ],
-      "related": [
-        "86"
-      ]
-    },
-    {
-      "id": "83",
-      "body": "その理由、自分でどう説明する？",
-      "categoryKey": "romance",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "84",
-      "body": "好きな人とのLINE、既読の速さって気になる方？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "85"
-      ],
-      "related": [
-        "80",
-        "89",
-        "168",
-        "173"
-      ]
-    },
-    {
-      "id": "85",
-      "body": "それで一喜一憂したエピソードある？",
-      "categoryKey": "romance",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "86",
-      "body": "友達の恋愛相談、聞く方？する方？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "87"
-      ],
-      "related": [
-        "82",
-        "166"
-      ]
-    },
-    {
-      "id": "87",
-      "body": "相談されて一番困った内容ってある？",
-      "categoryKey": "romance",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "88",
-      "body": "理想のデート、インドア派？アウトドア派？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "75",
-        "171",
-        "172"
-      ]
-    },
-    {
-      "id": "89",
-      "body": "連絡の頻度、多い方が安心する？少なめでも平気？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "90"
-      ],
-      "related": [
-        "84"
-      ]
-    },
-    {
-      "id": "90",
-      "body": "それで気まずくなったことある？",
-      "categoryKey": "romance",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "91",
-      "body": "今日のこの後、正直もっとどこ行きたい気分？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "92"
-      ],
-      "related": [
-        "93",
-        "100",
-        "103",
-        "186"
-      ]
-    },
-    {
-      "id": "92",
-      "body": "そこを選んだ理由ってある？",
-      "categoryKey": "date",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "93",
-      "body": "今までのデートで一番良かった場所ってどこ？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "94"
-      ],
-      "related": [
-        "91",
-        "96"
-      ]
-    },
-    {
-      "id": "94",
-      "body": "何がそんなに良かった？",
-      "categoryKey": "date",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [
-        "95"
-      ],
-      "related": []
-    },
-    {
-      "id": "95",
-      "body": "また同じ場所、行きたいと思う？",
-      "categoryKey": "date",
-      "depth": 3,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "96",
-      "body": "今度、一緒に行ってみたい場所ってある？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "97"
-      ],
-      "related": [
-        "93",
-        "182"
-      ]
-    },
-    {
-      "id": "97",
-      "body": "そこで何したい？",
-      "categoryKey": "date",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "98",
-      "body": "デートの日の朝って、準備にどのくらい時間かける？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "99"
-      ],
-      "related": [
-        "102",
-        "183"
-      ]
-    },
-    {
-      "id": "99",
-      "body": "一番気合い入れるのはどの部分？",
-      "categoryKey": "date",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "100",
-      "body": "映画・カフェ・遊園地、デートで一番好きなのはどれ？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "101"
-      ],
-      "related": [
-        "91",
-        "180",
-        "181"
-      ]
-    },
-    {
-      "id": "101",
-      "body": "その理由をひとことで言うと？",
-      "categoryKey": "date",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "102",
-      "body": "今日の格好、自分で採点するなら100点中何点？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "98",
-        "177"
-      ]
-    },
-    {
-      "id": "103",
-      "body": "一緒にいて一番落ち着く瞬間ってどんな時？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "104"
-      ],
-      "related": [
-        "91",
-        "179"
-      ]
-    },
-    {
-      "id": "104",
-      "body": "それ、今日もあった？",
-      "categoryKey": "date",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "105",
-      "body": "今まで一番くだらない理由でケンカしたことは？",
-      "categoryKey": "funny",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "106"
-      ],
-      "related": [
-        "107",
-        "113"
-      ]
-    },
-    {
-      "id": "106",
-      "body": "その時どっちが折れたの？",
-      "categoryKey": "funny",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "107",
-      "body": "人生で一番の黒歴史をひとつだけ挙げるなら？",
-      "categoryKey": "funny",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "108"
-      ],
-      "related": [
-        "105",
-        "193"
-      ]
-    },
-    {
-      "id": "108",
-      "body": "今思い出しても笑える？",
-      "categoryKey": "funny",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "109",
-      "body": "スマホのスクショフォルダで一番謎な1枚、心当たりある？",
-      "categoryKey": "funny",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "110"
-      ],
-      "related": [
-        "111",
-        "115",
-        "190",
-        "191"
-      ]
-    },
-    {
-      "id": "110",
-      "body": "それ、何で保存したままなの？",
-      "categoryKey": "funny",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "111",
-      "body": "友達に一番いじられるポイントってある？",
-      "categoryKey": "funny",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "112"
-      ],
-      "related": [
-        "109",
-        "187"
-      ]
-    },
-    {
-      "id": "112",
-      "body": "それ、実は自分でも気に入ってたりする？",
-      "categoryKey": "funny",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "113",
-      "body": "今までで一番盛大な勘違いエピソードある？",
-      "categoryKey": "funny",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "114"
-      ],
-      "related": [
-        "105",
-        "189"
-      ]
-    },
-    {
-      "id": "114",
-      "body": "気づいた瞬間、どうなった？",
-      "categoryKey": "funny",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "115",
-      "body": "自分の中の『あるある』で、誰にも共感してもらえないやつある？",
-      "categoryKey": "funny",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "109"
-      ]
-    },
-    {
-      "id": "116",
-      "body": "最近、写真より動画で撮ることの方が増えた？",
-      "categoryKey": "omakase",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "117"
-      ],
-      "related": [
-        "118"
-      ]
-    },
-    {
-      "id": "117",
-      "body": "残しておきたくなるのはどんな瞬間？",
-      "categoryKey": "omakase",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "118",
-      "body": "1日の中でスマホを一番触ってる時間帯は？",
-      "categoryKey": "omakase",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "119"
-      ],
-      "related": [
-        "116"
-      ]
-    },
-    {
-      "id": "119",
-      "body": "その時間、大体何見てる？",
-      "categoryKey": "omakase",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "120",
-      "body": "推し活してるなら、グッズって何か持ってる？",
-      "categoryKey": "omakase",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "121"
-      ],
-      "related": [
-        "18"
-      ]
-    },
-    {
-      "id": "121",
-      "body": "一番のお気に入りのグッズはどれ？",
-      "categoryKey": "omakase",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [
-        "122"
-      ],
-      "related": []
-    },
-    {
-      "id": "122",
-      "body": "それ、どこに飾ってる（しまってる）？",
-      "categoryKey": "omakase",
-      "depth": 3,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "123",
-      "body": "友達との写真や動画、どのアプリに一番残してる？",
-      "categoryKey": "omakase",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "124"
-      ],
-      "related": [
-        "10"
-      ]
-    },
-    {
-      "id": "124",
-      "body": "見返すことある？",
-      "categoryKey": "omakase",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "125",
-      "body": "最近バイトしてる？（したことある？）",
-      "categoryKey": "omakase",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "126"
-      ],
-      "related": []
-    },
-    {
-      "id": "126",
-      "body": "そのバイト選んだ理由ある？",
-      "categoryKey": "omakase",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "127",
-      "body": "課金したことあるアプリやゲームある？",
-      "categoryKey": "omakase",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "128"
-      ],
-      "related": [
-        "21"
-      ]
-    },
-    {
-      "id": "128",
-      "body": "それ、今振り返ってどう思う？",
-      "categoryKey": "omakase",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "129",
-      "body": "最近、誰かに『それいいね』って言われて嬉しかったものある？",
-      "categoryKey": "omakase",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "130"
-      ],
-      "related": [
-        "7"
-      ]
-    },
-    {
-      "id": "130",
-      "body": "自分でも気に入ってるポイントなんだった？",
-      "categoryKey": "omakase",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "131",
-      "body": "友達グループの裏話、実はここだけの話ってある？",
-      "categoryKey": "close_friends",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "132"
-      ],
-      "related": [
-        "30"
-      ]
-    },
-    {
-      "id": "132",
-      "body": "それ、話してもいいやつ？",
-      "categoryKey": "close_friends",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "133",
-      "body": "友達に一番『助かった』って思った瞬間は？",
-      "categoryKey": "close_friends",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "134"
-      ],
-      "related": [
-        "33"
-      ]
-    },
-    {
-      "id": "134",
-      "body": "それ、ちゃんとお礼言えた？",
-      "categoryKey": "close_friends",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "135",
-      "body": "友達とケンカした時、仲直りのきっかけになるのはどっちが多い？",
-      "categoryKey": "close_friends",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "136"
-      ],
-      "related": []
-    },
-    {
-      "id": "136",
       "body": "最近そういうことあった？",
       "categoryKey": "close_friends",
       "depth": 2,
@@ -1574,29 +789,31 @@
       "related": []
     },
     {
-      "id": "137",
+      "id": "69",
       "body": "今の友達と出会った瞬間、覚えてる？",
       "categoryKey": "close_friends",
       "depth": 1,
       "isStarter": true,
       "deepen": [
-        "138"
+        "70"
       ],
-      "related": []
+      "related": [
+        "77"
+      ]
     },
     {
-      "id": "138",
+      "id": "70",
       "body": "最初の印象と今で変わったことある？",
       "categoryKey": "close_friends",
       "depth": 2,
       "isStarter": false,
       "deepen": [
-        "139"
+        "71"
       ],
       "related": []
     },
     {
-      "id": "139",
+      "id": "71",
       "body": "その変化、自分でどう思う？",
       "categoryKey": "close_friends",
       "depth": 3,
@@ -1605,20 +822,20 @@
       "related": []
     },
     {
-      "id": "140",
+      "id": "72",
       "body": "友達といて一番自分らしくいられる瞬間ってどんな時？",
       "categoryKey": "close_friends",
       "depth": 1,
       "isStarter": true,
       "deepen": [
-        "141"
+        "73"
       ],
       "related": [
-        "23"
+        "46"
       ]
     },
     {
-      "id": "141",
+      "id": "73",
       "body": "逆に、気を遣っちゃう瞬間もある？",
       "categoryKey": "close_friends",
       "depth": 2,
@@ -1627,96 +844,88 @@
       "related": []
     },
     {
-      "id": "142",
+      "id": "74",
       "body": "友達のことで、地味に尊敬してるところある？",
       "categoryKey": "close_friends",
       "depth": 1,
       "isStarter": true,
       "deepen": [],
       "related": [
-        "33"
+        "56"
       ]
     },
     {
-      "id": "143",
-      "body": "普段、写真や動画ってよく撮る方ですか？",
-      "categoryKey": "first_meeting",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "51"
-      ]
-    },
-    {
-      "id": "144",
-      "body": "最近見てハマった動画とかありますか？",
-      "categoryKey": "first_meeting",
+      "id": "75",
+      "body": "友達と旅行行けるなら、どこ行きたい？",
+      "categoryKey": "close_friends",
       "depth": 1,
       "isStarter": true,
       "deepen": [
-        "145"
+        "76"
       ],
       "related": []
     },
     {
-      "id": "145",
-      "body": "それ、どこで見つけたんですか？",
-      "categoryKey": "first_meeting",
+      "id": "76",
+      "body": "誰と行きたい？",
+      "categoryKey": "close_friends",
       "depth": 2,
       "isStarter": false,
       "deepen": [],
       "related": []
     },
     {
-      "id": "146",
-      "body": "バイトってしてますか？",
-      "categoryKey": "first_meeting",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "147"
-      ],
-      "related": [
-        "42"
-      ]
-    },
-    {
-      "id": "147",
-      "body": "どんな感じのバイトですか？",
-      "categoryKey": "first_meeting",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "148",
-      "body": "小さい頃から好きなものって、今も好きだったりしますか？",
-      "categoryKey": "first_meeting",
+      "id": "77",
+      "body": "一番長い付き合いの友達、いつからの仲？",
+      "categoryKey": "close_friends",
       "depth": 1,
       "isStarter": true,
       "deepen": [],
       "related": [
-        "44"
+        "69"
       ]
     },
     {
-      "id": "149",
-      "body": "得意な科目とか、ありますか？",
+      "id": "78",
+      "body": "友達を動物に例えると何？",
+      "categoryKey": "close_friends",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "79"
+      ]
+    },
+    {
+      "id": "79",
+      "body": "無人島に友達を1人だけ連れてけるなら誰？",
+      "categoryKey": "close_friends",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "78"
+      ]
+    },
+    {
+      "id": "80",
+      "body": "出身はどのあたりですか？",
       "categoryKey": "first_meeting",
       "depth": 1,
       "isStarter": true,
       "deepen": [
-        "150"
+        "81"
       ],
       "related": [
-        "45"
+        "82",
+        "84",
+        "89",
+        "105"
       ]
     },
     {
-      "id": "150",
-      "body": "それ、好きだから得意なんですか？",
+      "id": "81",
+      "body": "その土地ならではの好きなところってありますか？",
       "categoryKey": "first_meeting",
       "depth": 2,
       "isStarter": false,
@@ -1724,380 +933,158 @@
       "related": []
     },
     {
-      "id": "151",
-      "body": "休日と平日、どっちのが好きですか？",
+      "id": "82",
+      "body": "休みの日は何をして過ごすことが多いですか？",
       "categoryKey": "first_meeting",
       "depth": 1,
       "isStarter": true,
       "deepen": [
-        "152"
-      ],
-      "related": []
-    },
-    {
-      "id": "152",
-      "body": "平日はどんな感じで過ごしてますか？",
-      "categoryKey": "first_meeting",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "153",
-      "body": "クラスTシャツ（クラT）のデザイン、自分たちのはどんな感じ？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "154"
+        "83"
       ],
       "related": [
-        "55"
-      ]
-    },
-    {
-      "id": "154",
-      "body": "そのデザイン、自分の意見も反映された？",
-      "categoryKey": "school",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "155",
-      "body": "文化祭・体育祭の打ち上げ、毎回行く方？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "55"
-      ]
-    },
-    {
-      "id": "156",
-      "body": "バイトと部活・委員会、両立できてる方？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "157"
-      ],
-      "related": []
-    },
-    {
-      "id": "157",
-      "body": "スケジュール管理ってどうやってる？",
-      "categoryKey": "school",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "158",
-      "body": "クラスのグループ、通知ずっと見ちゃう方？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "66"
-      ]
-    },
-    {
-      "id": "159",
-      "body": "模試や定期テストの結果、親には見せる派？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "160"
-      ],
-      "related": []
-    },
-    {
-      "id": "160",
-      "body": "見せた時、大体どんな反応される？",
-      "categoryKey": "school",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "161",
-      "body": "学校の中で密かに気に入ってる場所ってある？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "62"
-      ]
-    },
-    {
-      "id": "162",
-      "body": "委員会や係、今何かやってる？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "163"
-      ],
-      "related": [
-        "58"
-      ]
-    },
-    {
-      "id": "163",
-      "body": "それ、自分から立候補した？",
-      "categoryKey": "school",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "164",
-      "body": "学校行事で一番記憶に残ってるのはどれ？",
-      "categoryKey": "school",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "165"
-      ],
-      "related": []
-    },
-    {
-      "id": "165",
-      "body": "その時、自分はどんな役割だった？",
-      "categoryKey": "school",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "166",
-      "body": "好きな人ができたこと、友達に話す方？内緒にする方？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "167"
-      ],
-      "related": [
-        "86"
-      ]
-    },
-    {
-      "id": "167",
-      "body": "話すとしたら、まず誰に話す？",
-      "categoryKey": "romance",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "168",
-      "body": "プロフィール画像やアイコン、気分で変える方？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "84"
-      ]
-    },
-    {
-      "id": "169",
-      "body": "デートした後、その日のうちに連絡する派？時間空ける派？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "170"
-      ],
-      "related": []
-    },
-    {
-      "id": "170",
-      "body": "それ、相手にも同じようにしてほしいタイプ？",
-      "categoryKey": "romance",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "171",
-      "body": "記念日とか、ちゃんと覚えてる方？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "88"
-      ]
-    },
-    {
-      "id": "172",
-      "body": "カップルでお揃いのもの、持ちたい派？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "88"
-      ]
-    },
-    {
-      "id": "173",
-      "body": "相手のどんな連絡が来ると安心する？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "174"
-      ],
-      "related": [
-        "84"
-      ]
-    },
-    {
-      "id": "174",
-      "body": "逆に、ちょっと不安になる連絡ってある？",
-      "categoryKey": "romance",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "175",
-      "body": "好きな人の前とそれ以外で、自分の態度って変わる方？",
-      "categoryKey": "romance",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "176"
-      ],
-      "related": []
-    },
-    {
-      "id": "176",
-      "body": "それ、意識してやってる？無意識？",
-      "categoryKey": "romance",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "177",
-      "body": "今日、写真とか撮った？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "178"
-      ],
-      "related": [
-        "102"
-      ]
-    },
-    {
-      "id": "178",
-      "body": "一番のお気に入り、どれ？",
-      "categoryKey": "date",
-      "depth": 2,
-      "isStarter": false,
-      "deepen": [],
-      "related": []
-    },
-    {
-      "id": "179",
-      "body": "デート中、無言の時間って気になる方？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "103"
-      ]
-    },
-    {
-      "id": "180",
-      "body": "今日食べたもので一番おいしかったのは？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "100"
-      ]
-    },
-    {
-      "id": "181",
-      "body": "絶叫系とか、得意な方？苦手な方？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "100"
-      ]
-    },
-    {
-      "id": "182",
-      "body": "今度もし1日フリーで一緒に過ごせるなら、何して過ごしたい？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
-        "96"
-      ]
-    },
-    {
-      "id": "183",
-      "body": "待ち合わせ、早めに着く方？ぴったり派？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [],
-      "related": [
+        "80",
+        "87",
+        "93",
         "98"
       ]
     },
     {
-      "id": "184",
-      "body": "今日のデート、自分の中で何点？",
-      "categoryKey": "date",
-      "depth": 1,
-      "isStarter": true,
-      "deepen": [
-        "185"
-      ],
-      "related": []
-    },
-    {
-      "id": "185",
-      "body": "その点数の理由、聞いてもいい？",
-      "categoryKey": "date",
+      "id": "83",
+      "body": "それを始めたきっかけって何ですか？",
+      "categoryKey": "first_meeting",
       "depth": 2,
       "isStarter": false,
       "deepen": [],
       "related": []
     },
     {
-      "id": "186",
-      "body": "次また会えるとしたら、いつ頃がいい？",
-      "categoryKey": "date",
+      "id": "84",
+      "body": "好きな食べ物とかありますか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "90"
+      ],
+      "related": [
+        "80",
+        "100"
+      ]
+    },
+    {
+      "id": "85",
+      "body": "普段よく聴く音楽のジャンルとかありますか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "86"
+      ],
+      "related": [
+        "91",
+        "101"
+      ]
+    },
+    {
+      "id": "86",
+      "body": "そのジャンルにハマったきっかけって何ですか？",
+      "categoryKey": "first_meeting",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "87",
+      "body": "休みの日、朝は早い派？遅い派？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "88"
+      ],
+      "related": [
+        "82"
+      ]
+    },
+    {
+      "id": "88",
+      "body": "その時間、何して過ごすことが多いですか？",
+      "categoryKey": "first_meeting",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "89",
+      "body": "初めて話す人にちょっと聞いてみたいこと、逆にありますか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "80"
+      ]
+    },
+    {
+      "id": "90",
+      "body": "好きな食べ物とは逆に、ちょっと苦手な食べ物ってありますか？",
+      "categoryKey": "first_meeting",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "91",
+      "body": "普段どんなSNSをよく見てますか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "92"
+      ],
+      "related": [
+        "85",
+        "95"
+      ]
+    },
+    {
+      "id": "92",
+      "body": "そこで最近ハマったコンテンツとかありますか？",
+      "categoryKey": "first_meeting",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "93",
+      "body": "部活や委員会は何かやってますか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "94"
+      ],
+      "related": [
+        "82"
+      ]
+    },
+    {
+      "id": "94",
+      "body": "それを選んだ理由ってありますか？",
+      "categoryKey": "first_meeting",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "95",
+      "body": "普段、写真や動画ってよく撮る方ですか？",
+      "categoryKey": "first_meeting",
       "depth": 1,
       "isStarter": true,
       "deepen": [],
@@ -2106,20 +1093,1336 @@
       ]
     },
     {
+      "id": "96",
+      "body": "最近見てハマった動画とかありますか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "97"
+      ],
+      "related": []
+    },
+    {
+      "id": "97",
+      "body": "それ、どこで見つけたんですか？",
+      "categoryKey": "first_meeting",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "98",
+      "body": "バイトってしてますか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "99"
+      ],
+      "related": [
+        "82"
+      ]
+    },
+    {
+      "id": "99",
+      "body": "どんな感じのバイトですか？",
+      "categoryKey": "first_meeting",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "100",
+      "body": "小さい頃から好きなものって、今も好きだったりしますか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "84"
+      ]
+    },
+    {
+      "id": "101",
+      "body": "得意な科目とか、ありますか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "102"
+      ],
+      "related": [
+        "85"
+      ]
+    },
+    {
+      "id": "102",
+      "body": "それ、好きだから得意なんですか？",
+      "categoryKey": "first_meeting",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "103",
+      "body": "休日と平日、どっちのが好きですか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "104"
+      ],
+      "related": []
+    },
+    {
+      "id": "104",
+      "body": "平日はどんな感じで過ごしてますか？",
+      "categoryKey": "first_meeting",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "105",
+      "body": "誕生日っていつですか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "80"
+      ]
+    },
+    {
+      "id": "106",
+      "body": "兄弟姉妹っていますか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "107"
+      ],
+      "related": []
+    },
+    {
+      "id": "107",
+      "body": "仲良い方ですか？",
+      "categoryKey": "first_meeting",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "108",
+      "body": "動物に例えると何だと思いますか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "109"
+      ]
+    },
+    {
+      "id": "109",
+      "body": "犬派ですか？猫派ですか？",
+      "categoryKey": "first_meeting",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "108"
+      ]
+    },
+    {
+      "id": "110",
+      "body": "今、一番気合い入れてる学校行事って何？（文化祭・体育祭・修学旅行とか）",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "111"
+      ],
+      "related": [
+        "113",
+        "130",
+        "132",
+        "145"
+      ]
+    },
+    {
+      "id": "111",
+      "body": "そこで自分は何の担当してる（してた）？",
+      "categoryKey": "school",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [
+        "112"
+      ],
+      "related": []
+    },
+    {
+      "id": "112",
+      "body": "本番、どんな感じになりそう？",
+      "categoryKey": "school",
+      "depth": 3,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "113",
+      "body": "部活や委員会で、今の一番の悩みってある？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "114"
+      ],
+      "related": [
+        "110",
+        "115",
+        "139"
+      ]
+    },
+    {
+      "id": "114",
+      "body": "それ、誰かに相談したことある？",
+      "categoryKey": "school",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "115",
+      "body": "テスト期間、直前になって焦るタイプ？コツコツやるタイプ？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "116"
+      ],
+      "related": [
+        "127",
+        "113"
+      ]
+    },
+    {
+      "id": "116",
+      "body": "テスト前日は何して過ごすことが多い？",
+      "categoryKey": "school",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "117",
+      "body": "学校で一番好きな時間帯って授業中・休み時間・放課後のどれ？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "118"
+      ],
+      "related": [
+        "124",
+        "138"
+      ]
+    },
+    {
+      "id": "118",
+      "body": "その時間、大体何して過ごしてる？",
+      "categoryKey": "school",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "119",
+      "body": "席替え、好きな方？苦手な方？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "120"
+      ],
+      "related": [
+        "121"
+      ]
+    },
+    {
+      "id": "120",
+      "body": "理想の席の場所ってある？",
+      "categoryKey": "school",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "121",
+      "body": "クラスで地味に定番になってる『あるある』ネタってある？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "119",
+        "135",
+        "143"
+      ]
+    },
+    {
+      "id": "122",
+      "body": "最近、授業中にこっそり考え事してたことある？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "123"
+      ],
+      "related": []
+    },
+    {
+      "id": "123",
+      "body": "それ、先生にバレたことある？",
+      "categoryKey": "school",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "124",
+      "body": "お昼、どこで誰と食べることが多い？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "125"
+      ],
+      "related": [
+        "117"
+      ]
+    },
+    {
+      "id": "125",
+      "body": "そのメンバーになった経緯ってある？",
+      "categoryKey": "school",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "126",
+      "body": "制服、自分なりにアレンジしてる部分ある？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "127",
+      "body": "進路や将来のこと、今どのくらい考えてる？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "128"
+      ],
+      "related": [
+        "115"
+      ]
+    },
+    {
+      "id": "128",
+      "body": "そう思うようになったきっかけってある？",
+      "categoryKey": "school",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [
+        "129"
+      ],
+      "related": []
+    },
+    {
+      "id": "129",
+      "body": "それ、親や先生に話したことある？",
+      "categoryKey": "school",
+      "depth": 3,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "130",
+      "body": "クラスTシャツ（クラT）のデザイン、自分たちのはどんな感じ？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "131"
+      ],
+      "related": [
+        "110"
+      ]
+    },
+    {
+      "id": "131",
+      "body": "そのデザイン、自分の意見も反映された？",
+      "categoryKey": "school",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "132",
+      "body": "文化祭・体育祭の打ち上げ、毎回行く方？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "110"
+      ]
+    },
+    {
+      "id": "133",
+      "body": "バイトと部活・委員会、両立できてる方？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "134"
+      ],
+      "related": []
+    },
+    {
+      "id": "134",
+      "body": "スケジュール管理ってどうやってる？",
+      "categoryKey": "school",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "135",
+      "body": "クラスのグループ、通知ずっと見ちゃう方？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "121"
+      ]
+    },
+    {
+      "id": "136",
+      "body": "模試や定期テストの結果、親には見せる派？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "137"
+      ],
+      "related": []
+    },
+    {
+      "id": "137",
+      "body": "見せた時、大体どんな反応される？",
+      "categoryKey": "school",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "138",
+      "body": "学校の中で密かに気に入ってる場所ってある？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "117"
+      ]
+    },
+    {
+      "id": "139",
+      "body": "委員会や係、今何かやってる？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "140"
+      ],
+      "related": [
+        "113"
+      ]
+    },
+    {
+      "id": "140",
+      "body": "それ、自分から立候補した？",
+      "categoryKey": "school",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "141",
+      "body": "学校行事で一番記憶に残ってるのはどれ？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "142"
+      ],
+      "related": []
+    },
+    {
+      "id": "142",
+      "body": "その時、自分はどんな役割だった？",
+      "categoryKey": "school",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "143",
+      "body": "クラスの中で自分を動物に例えると何だと思う？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "121"
+      ]
+    },
+    {
+      "id": "144",
+      "body": "もし1日だけ先生になれるなら、何したい？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "145",
+      "body": "体育祭と文化祭、どっちが好き？",
+      "categoryKey": "school",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "110"
+      ]
+    },
+    {
+      "id": "146",
+      "body": "好きな人ができると、まず変わることってどんなところ？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "147"
+      ],
+      "related": [
+        "149",
+        "159"
+      ]
+    },
+    {
+      "id": "147",
+      "body": "それ、自分で気づいてた？周りに指摘された？",
+      "categoryKey": "romance",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [
+        "148"
+      ],
+      "related": []
+    },
+    {
+      "id": "148",
+      "body": "それが一番当てはまったのっていつ頃？",
+      "categoryKey": "romance",
+      "depth": 3,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "149",
+      "body": "好きなタイプ、外見と中身どっちを先に見る？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "150"
+      ],
+      "related": [
+        "146"
+      ]
+    },
+    {
+      "id": "150",
+      "body": "その基準、いつ頃からそうなった？",
+      "categoryKey": "romance",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "151",
+      "body": "気になる人ができた時、最初にすることってある？（SNSチェックとか）",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "152"
+      ],
+      "related": [
+        "155"
+      ]
+    },
+    {
+      "id": "152",
+      "body": "それで印象変わったことある？",
+      "categoryKey": "romance",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "153",
+      "body": "告白は自分からするタイプ？されるの待つタイプ？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "154"
+      ],
+      "related": [
+        "157"
+      ]
+    },
+    {
+      "id": "154",
+      "body": "その理由、自分でどう説明する？",
+      "categoryKey": "romance",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "155",
+      "body": "好きな人とのLINE、既読の速さって気になる方？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "156"
+      ],
+      "related": [
+        "151",
+        "160",
+        "164",
+        "169"
+      ]
+    },
+    {
+      "id": "156",
+      "body": "それで一喜一憂したエピソードある？",
+      "categoryKey": "romance",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "157",
+      "body": "友達の恋愛相談、聞く方？する方？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "158"
+      ],
+      "related": [
+        "153",
+        "162"
+      ]
+    },
+    {
+      "id": "158",
+      "body": "相談されて一番困った内容ってある？",
+      "categoryKey": "romance",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "159",
+      "body": "理想のデート、インドア派？アウトドア派？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "146",
+        "167",
+        "168"
+      ]
+    },
+    {
+      "id": "160",
+      "body": "連絡の頻度、多い方が安心する？少なめでも平気？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "161"
+      ],
+      "related": [
+        "155"
+      ]
+    },
+    {
+      "id": "161",
+      "body": "それで気まずくなったことある？",
+      "categoryKey": "romance",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "162",
+      "body": "好きな人ができたこと、友達に話す方？内緒にする方？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "163"
+      ],
+      "related": [
+        "157"
+      ]
+    },
+    {
+      "id": "163",
+      "body": "話すとしたら、まず誰に話す？",
+      "categoryKey": "romance",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "164",
+      "body": "プロフィール画像やアイコン、気分で変える方？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "155"
+      ]
+    },
+    {
+      "id": "165",
+      "body": "デートした後、その日のうちに連絡する派？時間空ける派？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "166"
+      ],
+      "related": []
+    },
+    {
+      "id": "166",
+      "body": "それ、相手にも同じようにしてほしいタイプ？",
+      "categoryKey": "romance",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "167",
+      "body": "記念日とか、ちゃんと覚えてる方？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "159",
+        "174"
+      ]
+    },
+    {
+      "id": "168",
+      "body": "カップルでお揃いのもの、持ちたい派？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "159"
+      ]
+    },
+    {
+      "id": "169",
+      "body": "相手のどんな連絡が来ると安心する？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "170"
+      ],
+      "related": [
+        "155"
+      ]
+    },
+    {
+      "id": "170",
+      "body": "逆に、ちょっと不安になる連絡ってある？",
+      "categoryKey": "romance",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "171",
+      "body": "好きな人の前とそれ以外で、自分の態度って変わる方？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "172"
+      ],
+      "related": [
+        "173"
+      ]
+    },
+    {
+      "id": "172",
+      "body": "それ、意識してやってる？無意識？",
+      "categoryKey": "romance",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "173",
+      "body": "好きな人の前だと素でいられる？ちょっと作る？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "171"
+      ]
+    },
+    {
+      "id": "174",
+      "body": "恋人にはどんなとこ褒められたい？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "167"
+      ]
+    },
+    {
+      "id": "175",
+      "body": "気になる人への第一印象、自分の中で覚えてたりする？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "176",
+      "body": "束縛されるのとするの、どっちかというとどっち？",
+      "categoryKey": "romance",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "177",
+      "body": "今日のこの後、正直もっとどこ行きたい気分？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "178"
+      ],
+      "related": [
+        "179",
+        "186",
+        "189",
+        "200"
+      ]
+    },
+    {
+      "id": "178",
+      "body": "そこを選んだ理由ってある？",
+      "categoryKey": "date",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "179",
+      "body": "今までのデートで一番良かった場所ってどこ？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "180"
+      ],
+      "related": [
+        "177",
+        "182"
+      ]
+    },
+    {
+      "id": "180",
+      "body": "何がそんなに良かった？",
+      "categoryKey": "date",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [
+        "181"
+      ],
+      "related": []
+    },
+    {
+      "id": "181",
+      "body": "また同じ場所、行きたいと思う？",
+      "categoryKey": "date",
+      "depth": 3,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "182",
+      "body": "今度、一緒に行ってみたい場所ってある？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "183"
+      ],
+      "related": [
+        "179",
+        "196"
+      ]
+    },
+    {
+      "id": "183",
+      "body": "そこで何したい？",
+      "categoryKey": "date",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "184",
+      "body": "デートの日の朝って、準備にどのくらい時間かける？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "185"
+      ],
+      "related": [
+        "188",
+        "197"
+      ]
+    },
+    {
+      "id": "185",
+      "body": "一番気合い入れるのはどの部分？",
+      "categoryKey": "date",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "186",
+      "body": "映画・カフェ・遊園地、デートで一番好きなのはどれ？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "187"
+      ],
+      "related": [
+        "177",
+        "194",
+        "195"
+      ]
+    },
+    {
       "id": "187",
+      "body": "その理由をひとことで言うと？",
+      "categoryKey": "date",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "188",
+      "body": "今日の格好、自分で採点するなら100点中何点？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "184",
+        "191"
+      ]
+    },
+    {
+      "id": "189",
+      "body": "一緒にいて一番落ち着く瞬間ってどんな時？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "190"
+      ],
+      "related": [
+        "177",
+        "193",
+        "201"
+      ]
+    },
+    {
+      "id": "190",
+      "body": "それ、今日もあった？",
+      "categoryKey": "date",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "191",
+      "body": "今日、写真とか撮った？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "192"
+      ],
+      "related": [
+        "188"
+      ]
+    },
+    {
+      "id": "192",
+      "body": "一番のお気に入り、どれ？",
+      "categoryKey": "date",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "193",
+      "body": "デート中、無言の時間って気になる方？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "189"
+      ]
+    },
+    {
+      "id": "194",
+      "body": "今日食べたもので一番おいしかったのどれ？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "186"
+      ]
+    },
+    {
+      "id": "195",
+      "body": "絶叫系とか、得意な方？苦手な方？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "186"
+      ]
+    },
+    {
+      "id": "196",
+      "body": "今度もし1日フリーで一緒に過ごせるなら、何して過ごしたい？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "182"
+      ]
+    },
+    {
+      "id": "197",
+      "body": "待ち合わせ、早めに着く方？ぴったり派？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "184"
+      ]
+    },
+    {
+      "id": "198",
+      "body": "今日のデート、自分の中で何点？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "199"
+      ],
+      "related": []
+    },
+    {
+      "id": "199",
+      "body": "その点数の理由、聞いてもいい？",
+      "categoryKey": "date",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "200",
+      "body": "次また会えるとしたら、いつ頃がいい？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "177"
+      ]
+    },
+    {
+      "id": "201",
+      "body": "今日ここに来る前、ちょっと緊張した？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "189"
+      ]
+    },
+    {
+      "id": "202",
+      "body": "今の関係を動物に例えると何だと思う？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "203",
+      "body": "次のデート、行き先決めるの自分から言う派？相手に任せる派？",
+      "categoryKey": "date",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "204",
+      "body": "今まで一番くだらない理由でケンカしたことある？",
+      "categoryKey": "funny",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "205"
+      ],
+      "related": [
+        "206",
+        "212"
+      ]
+    },
+    {
+      "id": "205",
+      "body": "その時どっちが折れたの？",
+      "categoryKey": "funny",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "206",
+      "body": "人生で一番の黒歴史をひとつだけ挙げるなら？",
+      "categoryKey": "funny",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "207"
+      ],
+      "related": [
+        "204",
+        "221"
+      ]
+    },
+    {
+      "id": "207",
+      "body": "今思い出しても笑える？",
+      "categoryKey": "funny",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "208",
+      "body": "スマホのスクショフォルダで一番謎な1枚、心当たりある？",
+      "categoryKey": "funny",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "209"
+      ],
+      "related": [
+        "210",
+        "214",
+        "218",
+        "219"
+      ]
+    },
+    {
+      "id": "209",
+      "body": "それ、何で保存したままなの？",
+      "categoryKey": "funny",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "210",
+      "body": "友達に一番いじられるポイントってある？",
+      "categoryKey": "funny",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "211"
+      ],
+      "related": [
+        "208",
+        "215",
+        "223"
+      ]
+    },
+    {
+      "id": "211",
+      "body": "それ、実は自分でも気に入ってたりする？",
+      "categoryKey": "funny",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "212",
+      "body": "今までで一番盛大な勘違いエピソードある？",
+      "categoryKey": "funny",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [
+        "213"
+      ],
+      "related": [
+        "204",
+        "217",
+        "224"
+      ]
+    },
+    {
+      "id": "213",
+      "body": "気づいた瞬間、どうなった？",
+      "categoryKey": "funny",
+      "depth": 2,
+      "isStarter": false,
+      "deepen": [],
+      "related": []
+    },
+    {
+      "id": "214",
+      "body": "自分の中の『あるある』で、誰にも共感してもらえないやつある？",
+      "categoryKey": "funny",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "208"
+      ]
+    },
+    {
+      "id": "215",
       "body": "グループ通話中に起きたハプニング、なんかある？",
       "categoryKey": "funny",
       "depth": 1,
       "isStarter": true,
       "deepen": [
-        "188"
+        "216"
       ],
       "related": [
-        "111"
+        "210"
       ]
     },
     {
-      "id": "188",
+      "id": "216",
       "body": "その場、どんな空気になった？",
       "categoryKey": "funny",
       "depth": 2,
@@ -2128,42 +2431,42 @@
       "related": []
     },
     {
-      "id": "189",
+      "id": "217",
       "body": "TikTokやリールの真似して失敗したことある？",
       "categoryKey": "funny",
       "depth": 1,
       "isStarter": true,
       "deepen": [],
       "related": [
-        "113"
+        "212"
       ]
     },
     {
-      "id": "190",
+      "id": "218",
       "body": "家族に見られて気まずかったスマホの中身、なんかある？",
       "categoryKey": "funny",
       "depth": 1,
       "isStarter": true,
       "deepen": [],
       "related": [
-        "109"
+        "208"
       ]
     },
     {
-      "id": "191",
+      "id": "219",
       "body": "送信先間違えたLINE、送ったことある？",
       "categoryKey": "funny",
       "depth": 1,
       "isStarter": true,
       "deepen": [
-        "192"
+        "220"
       ],
       "related": [
-        "109"
+        "208"
       ]
     },
     {
-      "id": "192",
+      "id": "220",
       "body": "それ、どうやってごまかした（対処した）？",
       "categoryKey": "funny",
       "depth": 2,
@@ -2172,26 +2475,48 @@
       "related": []
     },
     {
-      "id": "193",
+      "id": "221",
       "body": "学校で一番『やらかした』と思う瞬間ある？",
       "categoryKey": "funny",
       "depth": 1,
       "isStarter": true,
       "deepen": [
-        "194"
+        "222"
       ],
       "related": [
-        "107"
+        "206"
       ]
     },
     {
-      "id": "194",
+      "id": "222",
       "body": "今思うと、それも黒歴史の一つ？",
       "categoryKey": "funny",
       "depth": 2,
       "isStarter": false,
       "deepen": [],
       "related": []
+    },
+    {
+      "id": "223",
+      "body": "動物に例えると何て言われたことある？",
+      "categoryKey": "funny",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "210"
+      ]
+    },
+    {
+      "id": "224",
+      "body": "今までで一番『待って』ってなった瞬間ある？",
+      "categoryKey": "funny",
+      "depth": 1,
+      "isStarter": true,
+      "deepen": [],
+      "related": [
+        "212"
+      ]
     }
   ]
 }

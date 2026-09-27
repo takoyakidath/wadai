@@ -49,6 +49,18 @@ function wadai_category_ai_guide(?string $categoryKey): string
     return WADAI_CATEGORY_AI_GUIDE[$categoryKey] ?? WADAI_CATEGORY_AI_GUIDE['omakase'];
 }
 
+// 初対面・学校は「少し丁寧」、それ以外は友達同士のタメ口。書き言葉のアンケート調（「〜ことは？」
+// 「〜のは？」型）になりがちなので、実際に話しかける時の自然な話し言葉にするよう明示する。
+const WADAI_POLITE_CATEGORIES = ['first_meeting', 'school'];
+
+function wadai_category_register(?string $categoryKey): string
+{
+    if (in_array($categoryKey, WADAI_POLITE_CATEGORIES, true)) {
+        return '少し丁寧なタメ口寄り（「です/ます」「ありますか？」は使ってよいが、話しかけるような自然な話し言葉にする。「〜することが多いですか？」のような作文・アンケート調の硬い言い回しは避ける）。';
+    }
+    return '友達同士のタメ口（「って」「してる？」「〜の？」のような普段の話し言葉にする。「〜ことは？」「〜のは？」のような書き言葉・アンケート調の言い回しは避ける）。';
+}
+
 /**
  * 直前の話題（parentTopic）を深掘りする、次の1問をAIで生成する。
  * 失敗・不適切判定の場合は null を返す（呼び出し側は「今は生成できません」等にフォールバック）。
@@ -63,6 +75,7 @@ function wadai_ai_generate_deeper_topic(string $parentBody, int $nextDepth, ?str
     $depthGuide = WADAI_DEPTH_GUIDE[$nextDepth] ?? WADAI_DEPTH_GUIDE[4];
     $categoryLine = $categoryLabel !== null ? "カテゴリ（モード）: {$categoryLabel}\n" : '';
     $categoryGuide = wadai_category_ai_guide($categoryKey);
+    $register = wadai_category_register($categoryKey);
 
     $systemPrompt = <<<PROMPT
 あなたは会話ガチャアプリ「ワダイ」の話題生成アシスタントです。
@@ -75,6 +88,7 @@ function wadai_ai_generate_deeper_topic(string $parentBody, int $nextDepth, ?str
 - 「なぜ」を使わない。「どこが」「どんな」「そのとき」「それから」「もし」のような自然な言い回しにする。
 - このレベルにふさわしい深さにする: {$depthGuide}
 - このモード向けのトーン: {$categoryGuide}
+- 話し方: {$register}
 - 今の高校生が実際に使う自然な言葉づかいにする（LINE・SNS・部活・受験など今どきの学校生活の語彙は歓迎。逆に、懐かしネタ・オヤジギャグ・世代が上の人にしか伝わらないネタ・古いテレビ/芸人ネタは絶対に使わない）。
 - 本名・連絡先・住所・SNSアカウントなど、個人を特定できる情報を尋ねない。
 - 直前の質問の自然な延長になるようにする。話題を変えない。
@@ -146,6 +160,7 @@ function wadai_ai_generate_chain(?string $categoryLabel, ?string $categoryKey = 
 
     $categoryLine = $categoryLabel !== null ? "カテゴリ（モード）: {$categoryLabel}\n" : '';
     $categoryGuide = wadai_category_ai_guide($categoryKey);
+    $register = wadai_category_register($categoryKey);
 
     $systemPrompt = <<<PROMPT
 あなたは会話ガチャアプリ「ワダイ」のコンテンツ作成アシスタントです。
@@ -157,6 +172,7 @@ function wadai_ai_generate_chain(?string $categoryLabel, ?string $categoryKey = 
 - 各質問は40文字以内、自然な日本語の1文。「なぜ」は使わない。
 - Lv.2以降は直前の質問への自然な深掘りにする（話題を変えない）。
 - このモード向けのトーン: {$categoryGuide}
+- 話し方: {$register}
 - 今の高校生が実際に使う自然な言葉づかいにする（LINE・SNS・部活・推し活・受験など今どきの語彙は歓迎。懐かしネタ・オヤジギャグ・世代が上の人にしか伝わらないネタ・古いテレビ/芸人ネタは絶対に使わない）。
 - 本名・連絡先・住所など個人を特定できる情報を尋ねない。
 - 出力は次のJSON形式のみ。他の文章は一切含めない: {"lv1":"...","lv2":"...","lv3":"...","lv4":"..."}

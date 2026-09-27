@@ -18,11 +18,14 @@ import { TopicCard } from "@/components/TopicCard";
 import { ActionButtons } from "@/components/ActionButtons";
 import { RelatedSheet } from "@/components/RelatedSheet";
 import { PartyModeCard } from "@/components/PartyModeCard";
+import { RelationshipPicker } from "@/components/RelationshipPicker";
 import { usePartyMode } from "@/hooks/usePartyMode";
 
 const RECENT_EXCLUDE_LIMIT = 12;
 
 export function GachaScreen() {
+  // 「今日は誰と話す？」を毎回の起動時に1回だけ聞く（永続化しない）。選ぶまではガチャ画面を出さない。
+  const [modeChosen, setModeChosen] = useState(false);
   const [categories, setCategories] = useState<CategoryDTO[]>([]);
   const [categoryKey, setCategoryKey] = useState("omakase");
   const [history, setHistory] = useState<TopicDTO[]>([]);
@@ -135,6 +138,11 @@ export function GachaScreen() {
     roll(key);
   }
 
+  function chooseMode(key: string) {
+    setModeChosen(true);
+    selectCategory(key);
+  }
+
   const actionProps = {
     onLighten: lighten,
     onDeepen: () => void deepen(),
@@ -146,6 +154,10 @@ export function GachaScreen() {
     deepenDisabled: maxedOut,
     widenHighlight: maxedOut,
   };
+
+  if (!modeChosen) {
+    return <RelationshipPicker onChoose={chooseMode} />;
+  }
 
   if (party.active && current) {
     return (
