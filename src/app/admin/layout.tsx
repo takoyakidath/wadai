@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { adminLogout, getAdminToken } from "@/lib/admin-api-client";
+import { adminLogout, getAdminToken, subscribeAdminUnauthorized } from "@/lib/admin-api-client";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -22,6 +22,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         return;
       }
       setReady(true);
+    });
+  }, [isLoginPage, router]);
+
+  useEffect(() => {
+    // トークンが期限切れ/無効になった場合、APIが401を返した時点で即ログイン画面へ戻す
+    // （それまでは「ログインが必要です」というエラーだけが画面に残ってしまうため）
+    return subscribeAdminUnauthorized(() => {
+      if (!isLoginPage) router.replace("/admin/login");
     });
   }, [isLoginPage, router]);
 

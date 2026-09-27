@@ -1,5 +1,11 @@
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? "";
 const TOKEN_KEY = "wadai:admin-token";
+const UNAUTHORIZED_EVENT = "wadai:admin-unauthorized";
+
+export function subscribeAdminUnauthorized(callback: () => void): () => void {
+  window.addEventListener(UNAUTHORIZED_EVENT, callback);
+  return () => window.removeEventListener(UNAUTHORIZED_EVENT, callback);
+}
 
 export type SubmissionDTO = {
   id: string;
@@ -71,6 +77,7 @@ async function adminFetch<T>(path: string, init: RequestInit = {}): Promise<T> {
 
   if (res.status === 401) {
     setAdminToken(null);
+    window.dispatchEvent(new Event(UNAUTHORIZED_EVENT));
   }
 
   if (!res.ok) {
