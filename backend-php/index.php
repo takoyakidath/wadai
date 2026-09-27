@@ -90,6 +90,12 @@ try {
         exit;
     }
 
+    // SSHの無いプランでの一回限りのスキーマ移行用（SETUP_TOKEN未設定なら404）
+    if (($method === 'GET' || $method === 'POST') && $segments === ['setup', 'migrate']) {
+        require __DIR__ . '/routes/setup_migrate.php';
+        exit;
+    }
+
     // --- 管理API（すべて Bearer トークン必須） ---
 
     if ($method === 'POST' && $segments === ['admin', 'login']) {
